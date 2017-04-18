@@ -1,0 +1,22 @@
+{
+    "compileOnSave": false,
+    "compilerOptions": {
+        "baseUrl": "./app",
+        "jsx": "react",
+        "target": "es5",
+        "module": "commonjs",
+        "noImplicitAny": true,
+        "suppressImplicitAnyIndexErrors": true,
+        "noImplicitUseStrict": false,
+        "noImplicitReturns": false,
+        "allowSyntheticDefaultImports": true,
+        "sourceMap": true,
+        "noEmit": true,
+        "skipLibCheck": true,
+        "experimentalDecorators": true
+    },
+    "include": [
+        "./app/**/*",
+        "./node_modules/@types/**/*.d.ts"
+    ]
+}

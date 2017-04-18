@@ -1,0 +1,31 @@
+{
+    "name": "server",
+    "version": "1.0.0",
+    "description": "",
+    "main": "server.js",
+    "scripts": {
+        "prod": "cd ./client; NODE_ENV='production' webpack -p --config ./webpack.config.js; cd ../;",
+        "dev": "node server.js cd ./client; webpack-dev-server --hot --color; cd ../;",
+        "build": "NODE_ENV=production webpack --config ./client/webpack.config.js",
+        "heroku-postbuild": "cd ./client && npm install && NODE_ENV='production' webpack -p --config ./webpack.config.js && cd ../;"
+    },
+    "repository": {
+        "type": "git",
+        "url": ".git"
+    },
+    "author": "",
+    "license": "ISC",
+    "engines": {
+        "node": "6.9.1",
+        "npm": "4.0.3"
+    },
+    "dependencies": {
+        "body-parser": "^1.15.2",
+        "express": "^4.14.0",
+        "lodash": "^4.17.4",
+        "method-override": "^2.3.7",
+        "morgan": "^1.7.0",
+        "serve-static": "^1.11.1",
+        "swig": "^1.4.2"
+    }
+}
