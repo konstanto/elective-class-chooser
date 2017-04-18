@@ -30,7 +30,7 @@ let config = {
         path: path.join(__dirname, '.'),
         filename: "[name].js",
         sourceMapFilename: "[file].map",
-        publicPath: "/"
+        publicPath: ""
     },
     resolve: {
         extensions: ["", ".ts", ".tsx", ".js"],
@@ -86,7 +86,7 @@ if (isDevelopment) {
         headers: { "Access-Control-Allow-Origin": "*" },
         publicPath: "http://localhost:8080/",
         https: false,
-        outputPath: path.join(__dirname, '../public'),
+        outputPath: path.join(__dirname, './'),
     };
 
     config.plugins.push(new WriteFilePlugin({ test: /\.html/ }));
