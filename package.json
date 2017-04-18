@@ -1,17 +1,14 @@
 {
-    "name": "server",
+    "name": "elective-course-selector",
     "version": "1.0.0",
     "description": "",
-    "main": "server.js",
-    "scripts": {
-        "prod": "cd ./client; NODE_ENV='production' webpack -p --config ./webpack.config.js; cd ../;",
-        "dev": "node server.js cd ./client; webpack-dev-server --hot --color; cd ../;",
-        "build": "NODE_ENV=production webpack --config ./client/webpack.config.js",
-        "heroku-postbuild": "cd ./client && npm install && NODE_ENV='production' webpack -p --config ./webpack.config.js && cd ../;"
-    },
     "repository": {
-        "type": "git",
-        "url": ".git"
+        "type": "../git",
+        "url": "../.git"
+    },
+    "scripts": {
+        "prod": "NODE_ENV='production' webpack -p --config ./webpack.config.js;",
+        "dev": "node server.js webpack-dev-server --hot --color;"
     },
     "author": "",
     "license": "ISC",
@@ -20,12 +17,36 @@
         "npm": "4.0.3"
     },
     "dependencies": {
-        "body-parser": "^1.15.2",
-        "express": "^4.14.0",
-        "lodash": "^4.17.4",
-        "method-override": "^2.3.7",
-        "morgan": "^1.7.0",
-        "serve-static": "^1.11.1",
-        "swig": "^1.4.2"
+        "@types/lodash": "^4.14.50",
+        "es6-promise": "4.0.5",
+        "lodash": "4.13.1",
+        "normalize.css": "5.0.0",
+        "react": "15.2.1",
+        "react-dom": "15.2.1",
+        "react-masonry-component": "^5.0.3",
+        "react-router": "2.4.1",
+        "@types/history": "^2.0.41",
+        "@types/react": "^0.14.55",
+        "@types/react-dom": "^0.14.19",
+        "@types/react-router": "^2.0.41",
+        "autoprefixer": "6.5.3",
+        "css-loader": "0.26.1",
+        "extract-text-webpack-plugin": "1.0.1",
+        "file-loader": "0.9.0",
+        "html-webpack-plugin": "2.22.0",
+        "less": "2.7.1",
+        "less-loader": "2.2.3",
+        "postcss-loader": "1.2.0",
+        "style-loader": "0.13.1",
+        "ts-loader": "1.2.1",
+        "typescript": "2.1.4",
+        "typings": "2.0.0",
+        "url-loader": "0.5.7",
+        "webpack": "1.14.0",
+        "write-file-webpack-plugin": "3.4.2"
+    },
+    "devDependencies": {
+        "webpack-dev-server": "1.16.2",
+        "react-hot-loader": "1.3.1"
     }
 }

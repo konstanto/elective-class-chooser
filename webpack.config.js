@@ -21,13 +21,13 @@ if (isProduction) {
 let config = {
     entry: {
         app: [
-            "app/App.tsx"
+            "client/app/App.tsx"
         ],
         vendor: ["lodash"]
     },
     devtool: "source-map",
     output: {
-        path: path.join(__dirname, '../public'),
+        path: path.join(__dirname, '.'),
         filename: "[name].js",
         sourceMapFilename: "[file].map",
         publicPath: "/"
@@ -48,8 +48,8 @@ let config = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            filename: "app.html",
-            template: "./index.html",
+            filename: "index.html",
+            template: "client/index.html",
             minify: { removeComments: true }
         }),
         new webpack.optimize.CommonsChunkPlugin({
