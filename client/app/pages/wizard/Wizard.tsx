@@ -14,7 +14,7 @@ interface WizardState{
 }
 
 export class Wizard extends React.Component<void, WizardState>{
-    private constructor(){
+    public constructor(){
         super();
         this.state = {
             study: "",

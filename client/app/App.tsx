@@ -8,7 +8,7 @@ import {LayoutStandalone} from "./pages/layoutStandalone/LayoutStandalone";
 import {Wizard} from "./pages/wizard/Wizard";
 import {Rules} from "./pages/rules/Rules";
 
-export const browserHistory = ReactRouter.useRouterHistory(History.createHistory)({ basename: "/" });
+export const browserHistory = ReactRouter.useRouterHistory(History.createHistory)({ basename: "/f2017e/a/8/" });
 
 let routes = (
     <ReactRouter.Router history={browserHistory}>
