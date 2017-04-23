@@ -1,11 +1,11 @@
 import "./../../shared/sharedLayout.less";
-import "./Layout.less";
+import "./LayoutStandalone.less";
 import * as React from "react";
 import * as ReactDOM from "react-dom";
 import {Footer} from "../../components/footer/Footer";
 import {Header} from "../../components/header/Header";
 
-export class Layout extends React.Component<void, void>{
+export class LayoutStandalone extends React.Component<void, void>{
     public render() {
         return (
             <div className="layout">
