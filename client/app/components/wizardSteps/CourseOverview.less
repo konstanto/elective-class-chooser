@@ -1,0 +1,44 @@
+.course-overview {
+    background-color: white;
+    
+    display: flex;
+    width: 100%;
+    max-width: 600px;
+    flex-basis: 50%;
+
+    .semester {
+        width: 50%;
+        position: relative;
+
+        .course {
+            border: 1px solid grey;
+            float: left;
+            height: 100px;
+            overflow: hidden;
+            padding: 2px;
+            word-break: keep-all;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+            .name {
+                font-size: 10px;
+                margin: 0px;
+                width: 100%;
+                word-break: break-all;
+                text-align: center;
+            }
+
+            &.half {
+                width: 50%;
+            }
+
+            &.quart {
+                width: 25%;
+            }
+        }
+
+    }
+
+}

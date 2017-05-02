@@ -1,0 +1,46 @@
+.select-course {
+    width: 400px;
+    max-width: 50%;
+    margin-right: 50px;
+    flex-basis: 50%;
+    .semester-type-selector {
+        display: flex;
+        .tab {
+            width: 50%;
+            height: 50px;
+            background-color: white;
+            border: 1px solid black;
+            text-align: center;
+            cursor: pointer;
+            &.selected {
+                background-color: grey;
+            }
+        }
+    }
+    .courses {
+        height: 50vh;
+        overflow-y: auto;
+
+        .course {
+            height: 120px;
+            width: 120px;
+            background-color: white;
+            box-shadow: 0 0 3px grey;
+            float: left;
+            margin: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 5px;
+            cursor: pointer;
+            &:hover {
+                border: 1px solid red;
+            }
+
+            p {
+                font-size: 12px;
+            }
+        }
+    }
+}
