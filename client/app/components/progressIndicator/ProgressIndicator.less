@@ -1,0 +1,28 @@
+.progress-indicator {
+    height: 30px;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    border: 1px solid black;
+    .step {
+        background-color: white;
+        flex-basis: 100%;
+        display: flex;
+        align-items: center;
+        padding: 0 5px;
+        border-left: 1px solid grey;
+        cursor: pointer;
+        &:first-of-type {
+            border-left: 0;
+        }
+        p {
+            margin: 0;
+            width: 100%;
+            text-align: center;
+        }
+        &.active {
+            background-color: green;
+        }
+    }
+}

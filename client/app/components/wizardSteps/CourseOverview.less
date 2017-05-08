@@ -1,44 +1,67 @@
 .course-overview {
-    background-color: white;
-    
-    display: flex;
-    width: 100%;
-    max-width: 600px;
-    flex-basis: 50%;
-
-    .semester {
-        width: 50%;
-        position: relative;
-
-        .course {
-            border: 1px solid grey;
-            float: left;
-            height: 100px;
-            overflow: hidden;
-            padding: 2px;
-            word-break: keep-all;
-            cursor: pointer;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            
-            .name {
-                font-size: 10px;
-                margin: 0px;
-                width: 100%;
-                word-break: break-all;
-                text-align: center;
-            }
-
-            &.half {
-                width: 50%;
-            }
-
-            &.quart {
-                width: 25%;
+    .headline {
+        padding-left: 50px;
+        text-align: center;
+    }
+    .overview {
+        display: flex;
+        width: 100%;
+        max-width: 700px;
+        flex-basis: 50%;
+        
+        .year-description {
+            margin-top: 50px;
+            .year {
+                display: flex;
+                height: 100px;
+                justify-content: center;
+                align-items: center;
+                width: 50px;
             }
         }
+        .semester-headline {
+            text-align: center;
+        }
+        .semester {
+            width: 50%;
+            position: relative;
+            &.fall {
+                margin-right: 5px;
+            }
+            
+            .course {
+                border: 1px solid grey;
+                float: left;
+                height: 100px;
+                overflow: hidden;
+                padding: 2px;
+                word-break: keep-all;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background-color: white;
 
+                &.can-be-removed {
+                    cursor: pointer;
+                    &:hover {
+                        background-color: grey;
+                    }
+                }
+
+                .name {
+                    font-size: 10px;
+                    margin: 0px;
+                    width: 100%;
+                    word-break: break-all;
+                    text-align: center;
+                }
+                &.half {
+                    width: 50%;
+                }
+                &.quart {
+                    width: 25%;
+                }
+            }
+        }
     }
-
 }

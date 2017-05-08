@@ -4,6 +4,8 @@ import * as ReactDOM from "react-dom";
 import { Link } from "react-router";
 import * as _ from "lodash";
 
+import {ProgressIndicator} from "../../components/progressIndicator/ProgressIndicator";
+
 import {ChooseStudy} from "../../components/wizardSteps/ChooseStudy";
 import {ChooseYear} from "../../components/wizardSteps/ChooseYear";
 import {CourseOverview} from "../../components/wizardSteps/CourseOverview";
@@ -73,23 +75,43 @@ export class Wizard extends React.Component<void, WizardState>{
             return (
                 <div className="wizard-step">
                     <ChooseYear startingYear={this.state.startingYear} semester={this.state.semester} onChangeStartingYear={(value: string) => {this.selectStartingYear(value)}} onChangeSemester={(value: string) => {this.selectSemester(value)}} />
-                    <CourseOverview deSelectCourse={(courseId: string) =>{this.deSelectCourse(courseId)}} semester={this.state.semester} selectedElectiveCourses={this.state.selectedElectiveCourses} />
+                    <CourseOverview deSelectCourse={(courseId: string) =>{this.deSelectCourse(courseId)}} semester={this.state.semester} selectedElectiveCourses={this.state.selectedElectiveCourses} selectedStudyId={this.state.study} />
                 </div>
                 )
         } else {
             return (
                 <div className="wizard-step">
-                    <SelectCourse onCourseSelect={(course)=> {this.selectCourse(course)}} selectedCourses={this.state.selectedElectiveCourses} />
-                    <CourseOverview deSelectCourse={(courseId: string) =>{this.deSelectCourse(courseId)}} semester={this.state.semester} selectedElectiveCourses={this.state.selectedElectiveCourses} />
+                    <SelectCourse selectedSemester={this.state.semester} onCourseSelect={(course)=> {this.selectCourse(course)}} selectedCourses={this.state.selectedElectiveCourses} />
+                    <CourseOverview deSelectCourse={(courseId: string) =>{this.deSelectCourse(courseId)}} semester={this.state.semester} selectedElectiveCourses={this.state.selectedElectiveCourses} selectedStudyId={this.state.study} />
                 </div>
                 )
         }
     }
 
+    private startOver(){
+        this.setState({
+            study: "",
+            semester: "",
+            startingYear: "",
+            selectedElectiveCourses: []
+        });
+    }
+
+
+    private goToChooseYear(){
+        this.setState({
+            semester: "",
+            startingYear: ""
+        });
+    }
+
     public render() {
         return (
             <div className="wizard">
-                {this.getCurrentWizardStep()}
+                <ProgressIndicator goToChooseStudy={()=>{this.startOver()}} goToChooseYear={()=>{this.goToChooseYear()}} />
+                <div className="body">
+                    {this.getCurrentWizardStep()}
+                </div>
             </div>);
     }
 }

@@ -5,26 +5,30 @@ import { Link } from 'react-router';
 import * as _ from "lodash";
 
 import { Study, Course, courses, semesterType } from "../../pages/wizard/Data";
+import { CourseDescription } from "../courseDescription/CourseDescription";
 
 interface SelectCourseProps {
     selectedCourses: string[];
     onCourseSelect(courseId: string): void;
+    selectedSemester: string;
 }
 
 interface SelectCourseState {
-    selectedSemesterType: semesterType;
+    selectedSemesterType?: semesterType;
+    selectedCourse?: null | Course;
 }
 
 export class SelectCourse extends React.Component<SelectCourseProps, SelectCourseState>{
-    constructor() {
-        super();
+    constructor(props: SelectCourseProps) {
+        super(props);
         this.state = {
-            selectedSemesterType: semesterType.summer
+            selectedSemesterType: props.selectedSemester === "5" ? semesterType.spring : semesterType.fall,
+            selectedCourse: null
         }
     }
 
     private selectCourse(course: Course) {
-        this.props.onCourseSelect(course.id);
+        this.setState({selectedCourse: course});
     }
 
     private getSelectedCoursesAsObjects() {
@@ -54,8 +58,8 @@ export class SelectCourse extends React.Component<SelectCourseProps, SelectCours
         });
 
         // Don't show courses if the semestertype is filled up
-        const selectedWinterSemesterCourses = _.filter(selectedCourses, (selectedCourse) => { return selectedCourse.semesterType.indexOf(semesterType.winter) > -1 });
-        const selectedSummerSemesterCourses = _.filter(selectedCourses, (selectedCourse) => { return selectedCourse.semesterType.indexOf(semesterType.summer) > -1 });
+        const selectedWinterSemesterCourses = _.filter(selectedCourses, (selectedCourse) => { return selectedCourse.semesterType.indexOf(semesterType.spring) > -1 });
+        const selectedSummerSemesterCourses = _.filter(selectedCourses, (selectedCourse) => { return selectedCourse.semesterType.indexOf(semesterType.fall) > -1 });
 
         let totalEctsInWinterSemester = 0;
         _.map(selectedWinterSemesterCourses, (winterSemesterCourse) => {
@@ -69,13 +73,13 @@ export class SelectCourse extends React.Component<SelectCourseProps, SelectCours
 
         if (totalEctsInWinterSemester >= 90) {
             _.remove(availableCourses, (course) => {
-                return course.semesterType.indexOf(semesterType.winter) > -1;
+                return course.semesterType.indexOf(semesterType.spring) > -1;
             })
         }
 
         if (totalEctsInSummerSemester >= 90) {
             _.remove(availableCourses, (course) => {
-                return course.semesterType.indexOf(semesterType.summer) > -1;
+                return course.semesterType.indexOf(semesterType.fall) > -1;
             })
         }
 
@@ -114,23 +118,30 @@ export class SelectCourse extends React.Component<SelectCourseProps, SelectCours
         return availableCourses;
     }
 
+    private deselectCourse(){
+        this.setState({selectedCourse: null});
+    }
+
     public render() {
-        const isSummerSelected = this.state.selectedSemesterType === semesterType.summer ? "selected" : null;
-        const isWinterSelected = this.state.selectedSemesterType === semesterType.winter ? "selected" : null;
+        const isSummerSelected = this.state.selectedSemesterType === semesterType.fall ? "selected" : null;
+        const isWinterSelected = this.state.selectedSemesterType === semesterType.spring ? "selected" : null;
         
         return (
             <div className="select-course">
+                <h2 className="headline">Vælg kursus</h2>
                 <div className="semester-type-selector">
-                    <div className={"tab " + isWinterSelected} onClick={()=>{this.setState({selectedSemesterType: semesterType.winter})}}>
-                        <p>Forårssemester</p>
-                    </div>
-                    <div className={"tab " + isSummerSelected} onClick={()=>{this.setState({selectedSemesterType: semesterType.summer})}}>
+                    <div className={"tab " + isSummerSelected} onClick={()=>{this.setState({selectedSemesterType: semesterType.fall})}}>
                         <p>Efterårssemester</p>
+                    </div>
+                    <div className={"tab " + isWinterSelected} onClick={()=>{this.setState({selectedSemesterType: semesterType.spring})}}>
+                        <p>Forårssemester</p>
                     </div>
                 </div>
                 <div className="courses">
                     {_.map(this.getAvailableCourses(), (course) => { return (<div className="course" key={course.id} onClick={() => { this.selectCourse(course) } }><p>{course.name}</p></div>) })}
                 </div>
+
+                {this.state.selectedCourse === null ? null : <CourseDescription courseName={this.state.selectedCourse.name} courseDescriptionLink={this.state.selectedCourse.link} courseId={this.state.selectedCourse.id} onSelectCourse={()=>{this.deselectCourse(); this.props.onCourseSelect(this.state.selectedCourse.id)}} onClose={()=>{this.deselectCourse()}} />}
             </div>
         );
     }

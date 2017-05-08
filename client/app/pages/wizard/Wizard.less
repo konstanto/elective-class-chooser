@@ -1,12 +1,16 @@
 .wizard {
     height: 100%;
     width: 100%;
-    max-width: 1500px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    .wizard-step {
+    max-width: 1500px; 
+    .body {
+        height: calc(~"100% - 100px");
+        width: 100%;
         display: flex;
+        align-items: center;
+        justify-content: center;
+        .wizard-step {
+            display: flex;
+            min-height: 65vh;
+        }
     }
 }
