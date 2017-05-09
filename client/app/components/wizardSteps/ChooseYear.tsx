@@ -3,11 +3,14 @@ import * as React from "react";
 import * as ReactDOM from "react-dom";
 import { Link } from 'react-router';
 
+import { semesterType } from "../../pages/wizard/Data";
+
 interface ChooseStudyProps {
     startingYear: string;
     semester: string;
     onChangeStartingYear(value: string): void;
     onChangeSemester(value: string): void;
+    onBachelorSelect(value: string): void;
 }
 
 export class ChooseYear extends React.Component<ChooseStudyProps, void>{
@@ -17,6 +20,10 @@ export class ChooseYear extends React.Component<ChooseStudyProps, void>{
 
     private onChangeSemester(element: HTMLSelectElement) {
         this.props.onChangeSemester(element.value)
+    }
+
+    private onBachelorSelect(element: HTMLSelectElement) {
+        this.props.onBachelorSelect(element.value)
     }
 
     public render() {
@@ -42,6 +49,13 @@ export class ChooseYear extends React.Component<ChooseStudyProps, void>{
                     <option value="3">3. semester</option>
                     <option value="2">2. semester</option>
                     <option value="1">1. semester</option>
+                </select>
+
+                <h2>Hvornår vil du skrive bachelorprojekt?</h2>
+                <select tabIndex={3} value={this.props.semester} onChange={(element) => { this.onBachelorSelect(element.currentTarget) } }>
+                    <option value={null}>-- Vælg semester --</option>
+                    <option value={semesterType.fall}>5. semester</option>
+                    <option value={semesterType.spring}>6. semester</option>
                 </select>
             </div>
         );

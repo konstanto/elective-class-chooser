@@ -22,7 +22,7 @@ export enum semesterType {
 export const studies: Study[] = [{
     id: "1",
     name: "Kommunikation og IT",
-    basicCourses: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]
+    basicCourses: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11"]
 }, {
     id: "2",
     name: "Retorik",
@@ -130,12 +130,20 @@ export const courses: Course[] = [{
     semesterType: [semesterType.spring],
     link: "http://hum.ku.dk/uddannelser/aktuelle_studieordninger/kommunikation/kommunikation_it_batv_2012.pdf"
 }, {
-    id: "12",
+    id: "12a",
     name: "Bachelorprojekt",
     ects: 15,
     externalCensor: true,
     graded: true,
     semesterType: [semesterType.fall]
+},
+{
+    id: "12b",
+    name: "Bachelorprojekt",
+    ects: 15,
+    externalCensor: true,
+    graded: true,
+    semesterType: [semesterType.spring]
 }, {
     id: "13",
     name: "Projektorienteret forløb efterår",

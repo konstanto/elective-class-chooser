@@ -10,7 +10,7 @@ import {ChooseStudy} from "../../components/wizardSteps/ChooseStudy";
 import {ChooseYear} from "../../components/wizardSteps/ChooseYear";
 import {CourseOverview} from "../../components/wizardSteps/CourseOverview";
 import {SelectCourse} from "../../components/wizardSteps/SelectCourse";
-import {Study, Course, courses, studies} from "./Data";
+import {Study, Course, courses, studies, semesterType} from "./Data";
 
 interface WizardState{
     study?: string;
@@ -19,8 +19,10 @@ interface WizardState{
     selectedElectiveCourses?: string[];
 }
 
-
 export class Wizard extends React.Component<void, WizardState>{
+    private bachelorIdSpring = "12a";
+    private bachelorIdFall = "12b";
+
     public constructor(){
         super();
         this.state = {
@@ -68,13 +70,19 @@ export class Wizard extends React.Component<void, WizardState>{
         this.setState({selectedElectiveCourses: selectedElectiveCourses});
     }
 
+    private selectBachelorPosition(semesterTypeForBachelor: string){
+        const selectedCourses = this.state.selectedElectiveCourses;
+        selectedCourses.push(semesterTypeForBachelor === "1" ? this.bachelorIdFall : this.bachelorIdSpring);
+        this.setState({selectedElectiveCourses: selectedCourses});
+    }
+
     private getCurrentWizardStep(){
         if(this.state.study.length === 0) {
             return <ChooseStudy options={studies} study={this.state.study} onChange={(value: string) => {this.selectStudy(value)}} />
-        } else if(this.state.semester.length === 0 || this.state.startingYear.length === 0){
+        } else if(this.state.semester.length === 0 || this.state.startingYear.length === 0 || (_.last(this.state.selectedElectiveCourses) !== this.bachelorIdFall && _.last(this.state.selectedElectiveCourses) !== this.bachelorIdSpring)){
             return (
                 <div className="wizard-step">
-                    <ChooseYear startingYear={this.state.startingYear} semester={this.state.semester} onChangeStartingYear={(value: string) => {this.selectStartingYear(value)}} onChangeSemester={(value: string) => {this.selectSemester(value)}} />
+                    <ChooseYear startingYear={this.state.startingYear} semester={this.state.semester} onChangeStartingYear={(value: string) => {this.selectStartingYear(value)}} onChangeSemester={(value: string) => {this.selectSemester(value)}} onBachelorSelect={(value: string) => {this.selectBachelorPosition(value)}} />
                     <CourseOverview deSelectCourse={(courseId: string) =>{this.deSelectCourse(courseId)}} semester={this.state.semester} selectedElectiveCourses={this.state.selectedElectiveCourses} selectedStudyId={this.state.study} />
                 </div>
                 )
@@ -97,18 +105,29 @@ export class Wizard extends React.Component<void, WizardState>{
         });
     }
 
-
     private goToChooseYear(){
         this.setState({
             semester: "",
             startingYear: ""
         });
+
+        const selectedCourses = this.state.selectedElectiveCourses;
+
+        if(selectedCourses.indexOf(this.bachelorIdFall) > -1){
+            _.remove(selectedCourses, (course) => {return course === this.bachelorIdFall});
+        }
+
+        if(selectedCourses.indexOf(this.bachelorIdSpring) > -1){
+            _.remove(selectedCourses, (course) => {return course === this.bachelorIdSpring});
+        }
+
+        this.setState({selectedElectiveCourses: selectedCourses});
     }
 
     public render() {
         return (
             <div className="wizard">
-                <ProgressIndicator goToChooseStudy={()=>{this.startOver()}} goToChooseYear={()=>{this.goToChooseYear()}} />
+                {this.state.study.length === 0 ? null : <ProgressIndicator goToChooseStudy={()=>{this.startOver()}} goToChooseYear={()=>{this.goToChooseYear()}} />}
                 <div className="body">
                     {this.getCurrentWizardStep()}
                 </div>

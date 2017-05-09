@@ -20,7 +20,7 @@ export class ChooseStudy extends React.Component<ChooseStudyProps, void>{
         return (
             <div className="choose-study">
                 <h1>Skal du vælge valgfag?</h1>
-                <h2>– Få et hurtigt overblik her</h2>
+                <p className="subtext">Brug Valgfagsvælgeren til at gennemse, <br />hvilke valgfag der er tilgængelige for dig på humaniora</p>
                 <select tabIndex={1} value={this.props.study} onChange={(element) => {this.onChangeEvent(element.currentTarget)}}>
                     <option value={""}>-- Vælg studie --</option>
                     {this.props.options.map((study) => {return <option key={study.id} value={study.id}>{study.name}</option>})}
