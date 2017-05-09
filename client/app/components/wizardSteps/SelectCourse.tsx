@@ -1,4 +1,4 @@
-import "./selectCourse.less";
+import "./SelectCourse.less";
 import * as React from "react";
 import * as ReactDOM from "react-dom";
 import { Link } from 'react-router';
