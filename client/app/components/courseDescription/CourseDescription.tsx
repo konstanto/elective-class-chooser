@@ -23,8 +23,8 @@ export class CourseDescription extends React.Component<CourseDescriptionProps, v
                     <iframe src={this.props.courseDescriptionLink}></iframe>
                 </div>
                 <div className="action-buttons">
-                    <button onClick={()=>{this.props.onClose()}}>Cancel</button>
-                    <button className="default-button" onClick={()=>{this.props.onSelectCourse(this.props.courseId)}}>Select</button>
+                    <button onClick={()=>{this.props.onClose()}}>Annuller</button>
+                    <button className="default-button" onClick={()=>{this.props.onSelectCourse(this.props.courseId)}}>Vælg fag</button>
                 </div>
                 </div>
             </div>
