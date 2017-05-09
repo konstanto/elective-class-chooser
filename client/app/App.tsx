@@ -10,8 +10,8 @@ import {Rules} from "./pages/rules/Rules";
 import {Legal} from "./pages/legal/Legal";
 import {Concept} from "./pages/concept/Concept";
 
-//export const browserHistory = ReactRouter.useRouterHistory(History.createHistory)({ basename: "/f2017e/a/8/" });
-export const browserHistory = ReactRouter.useRouterHistory(History.createHistory)({ basename: "/" });
+export const browserHistory = ReactRouter.useRouterHistory(History.createHistory)({ basename: "/f2017e/a/8/" });
+//export const browserHistory = ReactRouter.useRouterHistory(History.createHistory)({ basename: "/" });
 
 let routes = (
     <ReactRouter.Router history={browserHistory}>
