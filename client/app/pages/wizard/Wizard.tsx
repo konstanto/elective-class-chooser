@@ -79,7 +79,7 @@ export class Wizard extends React.Component<void, WizardState>{
     private getCurrentWizardStep(){
         if(this.state.study.length === 0) {
             return <ChooseStudy options={studies} study={this.state.study} onChange={(value: string) => {this.selectStudy(value)}} />
-        } else if(this.state.semester.length === 0 || this.state.startingYear.length === 0 || (_.last(this.state.selectedElectiveCourses) !== this.bachelorIdFall && _.last(this.state.selectedElectiveCourses) !== this.bachelorIdSpring)){
+        } else if(this.state.semester.length === 0 || this.state.startingYear.length === 0 || (this.state.selectedElectiveCourses.indexOf(this.bachelorIdFall) === -1 && this.state.selectedElectiveCourses.indexOf(this.bachelorIdSpring) === -1)){
             return (
                 <div className="wizard-step">
                     <ChooseYear startingYear={this.state.startingYear} semester={this.state.semester} onChangeStartingYear={(value: string) => {this.selectStartingYear(value)}} onChangeSemester={(value: string) => {this.selectSemester(value)}} onBachelorSelect={(value: string) => {this.selectBachelorPosition(value)}} />
