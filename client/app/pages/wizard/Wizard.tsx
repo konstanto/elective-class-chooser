@@ -20,8 +20,8 @@ interface WizardState{
 }
 
 export class Wizard extends React.Component<void, WizardState>{
-    private bachelorIdSpring = "12a";
-    private bachelorIdFall = "12b";
+    private bachelorIdSpring = "0a";
+    private bachelorIdFall = "0b";
 
     public constructor(){
         super();

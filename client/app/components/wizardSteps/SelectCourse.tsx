@@ -50,6 +50,10 @@ export class SelectCourse extends React.Component<SelectCourseProps, SelectCours
                 return;
             }
 
+            if(course.id === "0a" || course.id === "0b"){
+                return;
+            }
+
             if(course.semesterType.indexOf(this.state.selectedSemesterType) == -1){
                 return;
             }
@@ -141,7 +145,7 @@ export class SelectCourse extends React.Component<SelectCourseProps, SelectCours
                     {_.map(this.getAvailableCourses(), (course) => { return (<div className="course" key={course.id} onClick={() => { this.selectCourse(course) } }><p>{course.name}</p></div>) })}
                 </div>
 
-                {this.state.selectedCourse === null ? null : <CourseDescription courseName={this.state.selectedCourse.name} courseDescriptionLink={this.state.selectedCourse.link} courseId={this.state.selectedCourse.id} onSelectCourse={()=>{this.deselectCourse(); this.props.onCourseSelect(this.state.selectedCourse.id)}} onClose={()=>{this.deselectCourse()}} />}
+                {this.state.selectedCourse === null ? null : <CourseDescription courseName={this.state.selectedCourse.name} courseDescriptionLink={this.state.selectedCourse.courseInfo} courseId={this.state.selectedCourse.id} onSelectCourse={()=>{this.deselectCourse(); this.props.onCourseSelect(this.state.selectedCourse.id)}} onClose={()=>{this.deselectCourse()}} />}
             </div>
         );
     }
