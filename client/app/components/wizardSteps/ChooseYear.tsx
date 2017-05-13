@@ -30,7 +30,7 @@ export class ChooseYear extends React.Component<ChooseStudyProps, void>{
         return (
             <div className="choose-year">
                 <h2 className="headline">Vælg årgang</h2>
-                <h2>Hvilket år startede du studie?</h2>
+                <h2 className="select-headline">Hvilket år startede du studie?</h2>
                 <select tabIndex={1} value={this.props.startingYear} onChange={(element) => { this.onChangeStartingYear(element.currentTarget) } }>
                     <option value={null}>-- Vælg år --</option>
                     <option value="2017">2017</option>
@@ -41,7 +41,7 @@ export class ChooseYear extends React.Component<ChooseStudyProps, void>{
                     <option value="2012">2012</option>
                 </select>
 
-                <h2>Hvilket semester er du på nu?</h2>
+                <h2 className="select-headline">Hvilket semester er du på nu?</h2>
                 <select tabIndex={2} value={this.props.semester} onChange={(element) => { this.onChangeSemester(element.currentTarget) } }>
                     <option value={null}>-- Vælg semester --</option>
                     <option value="5">5. semester</option>
@@ -51,7 +51,7 @@ export class ChooseYear extends React.Component<ChooseStudyProps, void>{
                     <option value="1">1. semester</option>
                 </select>
 
-                <h2>Hvornår vil du skrive bachelorprojekt?</h2>
+                <h2 className="select-headline">Hvornår vil du skrive bachelorprojekt?</h2>
                 <select tabIndex={3} value={this.props.semester} onChange={(element) => { this.onBachelorSelect(element.currentTarget) } }>
                     <option value={null}>-- Vælg semester --</option>
                     <option value={semesterType.fall}>5. semester</option>

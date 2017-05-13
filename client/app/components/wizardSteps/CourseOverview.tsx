@@ -11,6 +11,7 @@ interface CourseOverviewProps {
     selectedElectiveCourses: string[];
     deSelectCourse(id: string): void;
     selectedStudyId: string;
+    shouldBeDisabled: boolean;
 }
 
 interface CourseOverviewState {
@@ -63,7 +64,7 @@ export class CourseOverview extends React.Component<CourseOverviewProps, CourseO
 
     public render() {
         return (
-            <div className="course-overview">
+            <div className={this.props.shouldBeDisabled === true ? "course-overview disabled" : "course-overview" }>
                 <h2 className="headline">Semesterplan</h2>
                 <div className="overview">
                     <div className="year-description">

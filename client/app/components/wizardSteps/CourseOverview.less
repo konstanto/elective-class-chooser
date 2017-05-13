@@ -1,14 +1,16 @@
 .course-overview {
+    padding-right: 20px;
     .headline {
         padding-left: 50px;
         text-align: center;
+        font-size: 1.3em;
+        text-transform: uppercase;
     }
     .overview {
         display: flex;
         width: 100%;
         max-width: 700px;
-        flex-basis: 50%;
-        
+        flex-basis: 600px;
         .year-description {
             margin-top: 50px;
             .year {
@@ -17,51 +19,69 @@
                 justify-content: center;
                 align-items: center;
                 width: 50px;
+                font-weight: bold;
+                text-transform: uppercase;
+                font-size: 12px;
             }
         }
         .semester-headline {
             text-align: center;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 12px;
         }
         .semester {
             width: 50%;
             position: relative;
             &.fall {
-                margin-right: 5px;
+                margin-right: 15px;
             }
-            
             .course {
-                border: 1px solid grey;
+                border: 1px solid grey, 1px solid transparent;
                 float: left;
                 height: 100px;
                 overflow: hidden;
-                padding: 2px;
-                word-break: keep-all;
+                padding: 4px;
                 display: flex;
                 justify-content: center;
                 align-items: center;
                 background-color: white;
-
+                margin: 1px;
                 &.can-be-removed {
                     cursor: pointer;
                     &:hover {
-                        background-color: grey;
+                        background-color: rgb(38,22,110);
+                        color: white;
                     }
                 }
-
                 .name {
-                    font-size: 10px;
+                    font-size: 12px;
                     margin: 0px;
                     width: 100%;
-                    word-break: break-all;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
                     text-align: center;
                 }
                 &.half {
-                    width: 50%;
+                    width: calc(~"50% - 2px");
                 }
                 &.quart {
-                    width: 25%;
+                    width: calc(~"25% - 2px");
                 }
             }
+        }
+    }
+    &.disabled {
+        position: relative;
+        &:after {
+            content: "";
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: rgba(255, 255, 255, 0.8);
+            z-index: 1;
         }
     }
 }

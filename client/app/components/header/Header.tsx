@@ -9,7 +9,7 @@ export class Header extends React.Component<void, void>{
             <div className="header">
                 <div className="header-content">
                     <div className="logo">
-                        <h1><Link to="/">Valgfagsvælgeren</Link></h1>
+                        <Link to="/"><div className="logo-image"></div></Link>
                     </div>
                     <div className="menu">
                         <Link to="/info/regler">Regler</Link>

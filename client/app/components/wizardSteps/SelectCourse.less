@@ -2,50 +2,72 @@
     width: 400px;
     max-width: 50%;
     margin-right: 50px;
-    flex-basis: 50%;
-
     .headline {
         text-align: center;
-        margin-bottom: 70px;
+        margin-bottom: 55px;
+        font-size: 1.3em;
+        text-transform: uppercase;
     }
     .semester-type-selector {
         display: flex;
+        margin-bottom: 10px;
         .tab {
             width: 50%;
             height: 50px;
-            background-color: white;
-            border: 1px solid black;
+            background-color: rgb(240, 247, 255);
             text-align: center;
             cursor: pointer;
+            border: 1px solid transparent;
+            &:hover {
+                border: 1px solid white;
+            }
             &.selected {
-                background-color: grey;
+                background-color: rgb(38, 22, 110);
+                color: white;
             }
         }
     }
     .courses {
         height: 50vh;
         overflow-y: auto;
-
         .course {
-            height: 120px;
-            width: 120px;
+            height: 40px;
+            width: 90%;
             background-color: white;
             box-shadow: 0 0 3px grey;
-            float: left;
             margin: 10px;
             display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 5px;
             cursor: pointer;
+            position: relative;
             &:hover {
-                border: 1px solid red;
+                border: 1px solid white;
             }
-
             p {
                 font-size: 12px;
             }
+            .ects {
+                width: 40px;
+                border-right: 1px solid black;
+                margin: 0;
+                line-height: 40px;
+                text-align: center;
+                background-color: rgb(38, 22, 110);
+                color: white;
+            }
+            .name {
+                width: calc(~"100% - 41px");
+                padding: 0 10px;
+            }
         }
+    }
+    &:after {
+        content: "";
+        height: 100%;
+        width: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-color: rgba(255, 255, 255, 0.8);
+        z-index: -1;
     }
 }

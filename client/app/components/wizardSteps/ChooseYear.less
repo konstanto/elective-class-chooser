@@ -1,16 +1,17 @@
 .choose-year {
-    flex-basis: 50%;
-
     h2 {
         font-weight: normal;
     }
-
-        .headline {
+    .select-headline {
+        font-size: 1em;
+    }
+    .headline {
         text-align: center;
         margin-bottom: 70px;
         font-weight: bold;
+        font-size: 1.3em;
+        text-transform: uppercase;
     }
-
     select {
         display: block;
         width: 400px;
@@ -20,5 +21,20 @@
         border-radius: 0;
         -webkit-appearance: none;
         -moz-appearance: none;
+        box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.4);
+        border-radius: 45px;
+        border: 0;
+        background-color: rgb(240, 247, 255);
+        margin-bottom: 30px;
+    }
+    &:after {
+        content: "";
+        height: 100%;
+        width: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-color: rgba(255, 255, 255, 0.8);
+        z-index: -1;
     }
 }

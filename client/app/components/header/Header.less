@@ -2,18 +2,29 @@
     width: 100%;
     padding: 5px 10%;
     display: flex;
-    margin-top: 25px;
+    margin-top: 15px;
     border-top: 1px dotted rgb(220, 220, 220);
     justify-content: center;
     margin: 0 auto;
-    height: 90px;
+    height: 70px;
+    position: relative;
+    background-color: rgb(240, 247, 255);
     .header-content {
         max-width: 1200px;
         width: 100%;
         padding: 0 10px;
         display: flex;
         justify-content: space-between;
-
+        .logo {
+            margin-top: 15px;
+            .logo-image {
+                background-image: url("../../resources/images/valgfagsvalgeren.png");
+                width: 250px;
+                height: 29px;
+                background-repeat: no-repeat;
+                background-size: 100% auto;
+            }
+        }
         a {
             text-decoration: none;
             color: black;
