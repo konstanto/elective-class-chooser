@@ -15,6 +15,7 @@ export class ChooseStudy extends React.Component<ChooseStudyProps, void>{
     private onChangeEvent(element: HTMLSelectElement) {
         this.props.onChange(element.value)
     }
+    
 
     public render() {
         return (
