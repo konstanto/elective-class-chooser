@@ -1,0 +1,60 @@
+.further-process-dialog {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    .modal {
+        width: 90%;
+        max-width: 800px;
+        height: 50%;
+        max-height: 800px;
+        background-color: white;
+        .description-view {
+            width: 100%;
+            padding: 10px;
+            height: calc(~"100% - 80px");
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .text-content {
+                .top {
+                    margin-bottom: 50px;
+                }
+                h2 {
+                    text-align: center;
+                }
+                p {
+                    text-align: center;
+                    margin-bottom: 20px;
+                }
+            }
+        }
+        .action-buttons {
+            display: flex;
+            button {
+                border: 1px solid black;
+                border-bottom: 0;
+                background-color: white;
+                height: 80px;
+                width: 50%;
+                &:first-of-type {
+                    border-right: 0;
+                }
+                cursor: pointer;
+                &.default-button {
+                    background-color: rgb(240, 247, 255);
+                }
+                &:hover {
+                    background-color: rgb(38, 22, 110);
+                    color: white;
+                }
+            }
+        }
+    }
+}

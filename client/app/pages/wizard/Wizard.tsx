@@ -10,6 +10,7 @@ import { ChooseStudy } from "../../components/wizardSteps/ChooseStudy";
 import { ChooseYear } from "../../components/wizardSteps/ChooseYear";
 import { CourseOverview } from "../../components/wizardSteps/CourseOverview";
 import { SelectCourse } from "../../components/wizardSteps/SelectCourse";
+import { FurtherProcessDialog } from "../../components/furtherProcessDialog/FurtherProcessDialog";
 import { Study, Course, courses, studies, semesterType } from "./Data";
 
 interface WizardState {
@@ -17,6 +18,7 @@ interface WizardState {
     semester?: string;
     startingYear?: string;
     selectedElectiveCourses?: string[];
+    shouldShowFurtherProcessDialog?: boolean;
 }
 
 export class Wizard extends React.Component<void, WizardState>{
@@ -29,8 +31,13 @@ export class Wizard extends React.Component<void, WizardState>{
             study: "",
             semester: "",
             startingYear: "",
-            selectedElectiveCourses: []
+            selectedElectiveCourses: [],
+            shouldShowFurtherProcessDialog: false
         }
+    }
+
+    private toggleFurtherProcessDialog(showState: boolean) {
+        this.setState({ shouldShowFurtherProcessDialog: showState });
     }
 
     private selectStudy(value: string) {
@@ -42,14 +49,33 @@ export class Wizard extends React.Component<void, WizardState>{
         this.setState({ startingYear: value });
     }
 
+    private getSelectedCoursesAsObjects() {
+        const selectedCourseObjects: Course[] = [];
+
+        _.map(this.state.selectedElectiveCourses, (selectedCourse) => {
+            selectedCourseObjects.push(_.find(courses, (course) => { return course.id === selectedCourse }));
+        });
+        return selectedCourseObjects;
+    }
+
     private selectSemester(value: string) {
-        this.setState({ semester: value });
+        this.setState({ semester: value });        
     }
 
     private selectCourse(course: string) {
         const selectedCourses = this.state.selectedElectiveCourses.slice();
         selectedCourses.push(course);
-        this.setState({ selectedElectiveCourses: selectedCourses });
+
+        this.setState({ selectedElectiveCourses: selectedCourses }, () => {
+            let totalEcts = 0;
+            _.map(this.getSelectedCoursesAsObjects(), (selectedCourse) => {
+                totalEcts += selectedCourse.ects;
+            });
+
+            if (totalEcts === 180) {
+                this.toggleFurtherProcessDialog(true);
+            }
+        });
     }
 
     private deSelectCourse(courseId: string) {
@@ -102,7 +128,8 @@ export class Wizard extends React.Component<void, WizardState>{
             study: "",
             semester: "",
             startingYear: "",
-            selectedElectiveCourses: []
+            selectedElectiveCourses: [],
+            shouldShowFurtherProcessDialog: false
         });
     }
 
@@ -138,6 +165,7 @@ export class Wizard extends React.Component<void, WizardState>{
     public render() {
         return (
             <div className="wizard">
+                {this.state.shouldShowFurtherProcessDialog === false ? null : <FurtherProcessDialog onClose={() => {this.setState({shouldShowFurtherProcessDialog: false}) } } onStartOver={() => {this.startOver() } } />}
                 {this.state.study.length === 0 ? null : <ProgressIndicator stepIndex={this.getStepIndex()} goToChooseStudy={() => { this.startOver() } } goToChooseYear={() => { this.goToChooseYear() } } />}
                 <div className="body">
                     {this.getCurrentWizardStep()}

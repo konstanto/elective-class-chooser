@@ -9,8 +9,8 @@ import { CourseDescription } from "../courseDescription/CourseDescription";
 
 interface SelectCourseProps {
     selectedCourses: string[];
-    onCourseSelect(courseId: string): void;
     selectedSemester: string;
+    onCourseSelect(courseId: string): void;
 }
 
 interface SelectCourseState {
@@ -123,6 +123,11 @@ export class SelectCourse extends React.Component<SelectCourseProps, SelectCours
         this.setState({ selectedCourse: null });
     }
 
+    private confirmCourseSelection() {
+        this.deselectCourse();
+        this.props.onCourseSelect(this.state.selectedCourse.id);
+    }
+
     public render() {
         const isSummerSelected = this.state.selectedSemesterType === semesterType.fall ? "selected" : null;
         const isWinterSelected = this.state.selectedSemesterType === semesterType.spring ? "selected" : null;
@@ -139,15 +144,17 @@ export class SelectCourse extends React.Component<SelectCourseProps, SelectCours
                     </div>
                 </div>
                 <div className="courses">
-                    {_.map(this.getAvailableCourses(), (course) => { return (
-                        <div className="course" key={course.id} onClick={() => { this.selectCourse(course) } }>
+                    {_.map(this.getAvailableCourses(), (course) => {
+                        return (
+                            <div className="course" key={course.id} onClick={() => { this.selectCourse(course) } }>
                                 <p className="ects">{course.ects}</p>
                                 <p className="name">{course.name}</p>
                             </div>
-                        ) })}
+                        )
+                    })}
                 </div>
 
-                {this.state.selectedCourse === null ? null : <CourseDescription courseName={this.state.selectedCourse.name} courseDescriptionLink={this.state.selectedCourse.courseInfo} courseId={this.state.selectedCourse.id} onSelectCourse={() => { this.deselectCourse(); this.props.onCourseSelect(this.state.selectedCourse.id) } } onClose={() => { this.deselectCourse() } } />}
+                {this.state.selectedCourse === null ? null : <CourseDescription courseName={this.state.selectedCourse.name} courseDescriptionLink={this.state.selectedCourse.courseInfo} courseId={this.state.selectedCourse.id} onSelectCourse={() => { this.confirmCourseSelection() } } onClose={() => { this.deselectCourse() } } />}
             </div>
         );
     }
