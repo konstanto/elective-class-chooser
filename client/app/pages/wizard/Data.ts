@@ -12,7 +12,8 @@ export interface Course {
     graded: boolean;
     semesterType: semesterType[];
     link?: string;
-    courseInfo?: string
+    courseInfo?: string,
+    belongingStudy?: string;
 }
 
 export enum semesterType {
@@ -66,7 +67,8 @@ export const courses: Course[] = [{
     graded: false,
     semesterType: [semesterType.fall],
     link: "http://hum.ku.dk/uddannelser/aktuelle_studieordninger/kommunikation/kommunikation_it_batv_2012.pdf",
-    courseInfo: "http://kurser.ku.dk/course/hkmb00161u/2017-2018"
+    courseInfo: "http://kurser.ku.dk/course/hkmb00161u/2017-2018",
+    belongingStudy: "1"
 }, {
     id: "2",
     name: "Grundlæggende kommunikationsteori",
@@ -75,7 +77,8 @@ export const courses: Course[] = [{
     graded: false,
     semesterType: [semesterType.fall],
     link: "http://hum.ku.dk/uddannelser/aktuelle_studieordninger/kommunikation/kommunikation_it_batv_2012.pdf",
-    courseInfo: "http://kurser.ku.dk/course/hkmb00151u/2017-2018"
+    courseInfo: "http://kurser.ku.dk/course/hkmb00151u/2017-2018",
+    belongingStudy: "1"
 }, {
     id: "3",
     name: "Empiriske undersøgelsesmetoder",
@@ -84,7 +87,8 @@ export const courses: Course[] = [{
     graded: true,
     semesterType: [semesterType.spring],
     link: "http://hum.ku.dk/uddannelser/aktuelle_studieordninger/kommunikation/kommunikation_it_batv_2012.pdf",
-    courseInfo: "http://kurser.ku.dk/course/hkmb00174u/2017-2018"
+    courseInfo: "http://kurser.ku.dk/course/hkmb00174u/2017-2018",
+    belongingStudy: "1"
 }, {
     id: "4",
     name: "1. årsprojekt",
@@ -93,7 +97,8 @@ export const courses: Course[] = [{
     graded: true,
     semesterType: [semesterType.spring],
     link: "http://hum.ku.dk/uddannelser/aktuelle_studieordninger/kommunikation/kommunikation_it_batv_2012.pdf",
-    courseInfo: "http://kurser.ku.dk/course/hkmb00176u/2017-2018"
+    courseInfo: "http://kurser.ku.dk/course/hkmb00176u/2017-2018",
+    belongingStudy: "1"
 }, {
     id: "5",
     name: "Interaktionsdesign",
@@ -102,7 +107,8 @@ export const courses: Course[] = [{
     graded: true,
     semesterType: [semesterType.spring],
     link: "http://hum.ku.dk/uddannelser/aktuelle_studieordninger/kommunikation/kommunikation_it_batv_2012.pdf",
-    courseInfo: "http://kurser.ku.dk/course/hkmb00182u/2017-2018"
+    courseInfo: "http://kurser.ku.dk/course/hkmb00182u/2017-2018",
+    belongingStudy: "1"
 }, {
     id: "6",
     name: "Analyse, design og regulering af IT-infrastruktur",
@@ -111,7 +117,8 @@ export const courses: Course[] = [{
     graded: true,
     semesterType: [semesterType.fall],
     link: "http://hum.ku.dk/uddannelser/aktuelle_studieordninger/kommunikation/kommunikation_og_it_ba.pdf",
-    courseInfo: "http://kurser.ku.dk/course/hkmb00191u/2017-2018"
+    courseInfo: "http://kurser.ku.dk/course/hkmb00191u/2017-2018",
+    belongingStudy: "1"
 }, {
     id: "7",
     name: "Fagets Videnskabsteori",
@@ -120,7 +127,8 @@ export const courses: Course[] = [{
     graded: true,
     semesterType: [semesterType.fall],
     link: "http://hum.ku.dk/uddannelser/aktuelle_studieordninger/kommunikation/kommunikation_it_batv_2012.pdf",
-    courseInfo: "http://kurser.ku.dk/course/hkmb00201u/2017-2018"
+    courseInfo: "http://kurser.ku.dk/course/hkmb00201u/2017-2018",
+    belongingStudy: "1"
 }, {
     id: "8",
     name: "Audiovisuel kommunikation",
@@ -129,7 +137,8 @@ export const courses: Course[] = [{
     graded: true,
     semesterType: [semesterType.fall],
     link: "http://hum.ku.dk/uddannelser/aktuelle_studieordninger/kommunikation/kommunikation_it_batv_2012.pdf",
-    courseInfo: "http://kurser.ku.dk/course/hkmb00211u/2017-2018"
+    courseInfo: "http://kurser.ku.dk/course/hkmb00211u/2017-2018",
+    belongingStudy: "1"
 }, {
     id: "9",
     name: "Kommunikation i kontekst",
@@ -138,7 +147,8 @@ export const courses: Course[] = [{
     graded: true,
     semesterType: [semesterType.spring],
     link: "http://hum.ku.dk/uddannelser/aktuelle_studieordninger/kommunikation/kommunikation_it_batv_2012.pdf",
-    courseInfo: "http://kurser.ku.dk/course/hkmb00221u/2016-2017"
+    courseInfo: "http://kurser.ku.dk/course/hkmb00221u/2016-2017",
+    belongingStudy: "1"
 }, {
     id: "10",
     name: "Designprojekt",
@@ -147,7 +157,8 @@ export const courses: Course[] = [{
     graded: true,
     semesterType: [semesterType.spring],
     link: "http://hum.ku.dk/uddannelser/aktuelle_studieordninger/kommunikation/kommunikation_it_batv_2012.pdf",
-    courseInfo: "http://kurser.ku.dk/course/hkmb00231u/2016-2017"
+    courseInfo: "http://kurser.ku.dk/course/hkmb00231u/2016-2017",
+    belongingStudy: "1"
 }, {
     id: "11",
     name: "Projektstyring og kravsspecificering",
@@ -156,7 +167,8 @@ export const courses: Course[] = [{
     graded: false,
     semesterType: [semesterType.spring],
     link: "http://hum.ku.dk/uddannelser/aktuelle_studieordninger/kommunikation/kommunikation_it_batv_2012.pdf",
-    courseInfo: "http://kurser.ku.dk/course/hkmb00241u/2016-2017"
+    courseInfo: "http://kurser.ku.dk/course/hkmb00241u/2016-2017",
+    belongingStudy: "1"
 }, {
     id: "13",
     name: "Projektorienteret forløb efterår",
@@ -164,21 +176,15 @@ export const courses: Course[] = [{
     externalCensor: false,
     graded: false,
     semesterType: [semesterType.fall],
-    
+    belongingStudy: "4"
 }, {
     id: "14",
     name: "Projektorienteret forløb forår",
     ects: 15,
     externalCensor: false,
     graded: false,
-    semesterType: [semesterType.spring]
-}, {
-    id: "15",
-    name: "Humanistisk entrepreneurship",
-    ects: 15,
-    externalCensor: false,
-    graded: true,
-    semesterType: [semesterType.spring]
+    semesterType: [semesterType.spring],
+    belongingStudy: "4"
 },
 {
     id: "19",
@@ -188,16 +194,18 @@ export const courses: Course[] = [{
     graded: true,
     semesterType: [semesterType.fall],
     link: "http://kurser.ku.dk/course/hrtb00802u/2017-2018",
-    courseInfo: "http://kurser.ku.dk/course/hrtb00802u/2017-2018"
+    courseInfo: "http://kurser.ku.dk/course/hrtb00802u/2017-2018",
+    belongingStudy: "2"
 }, {
     id: "20",
-    name: "Retorisk skrivning og rÂdgivning",
+    name: "Retorisk skrivning og rådgivning",
     ects: 15,
     externalCensor: false,
     graded: true,
     semesterType: [semesterType.fall],
     link: "http://hum.ku.dk/uddannelser/aktuelle_studieordninger/retorik/retorik_ba.pdf",
-    courseInfo: "http://kurser.ku.dk/course/hrtb00821u/2017-2018"
+    courseInfo: "http://kurser.ku.dk/course/hrtb00821u/2017-2018",
+    belongingStudy: "2"
 }, {
     id: "21",
     name: "Taleværksted og -rådgivning",
@@ -206,7 +214,8 @@ export const courses: Course[] = [{
     graded: true,
     semesterType: [semesterType.spring],
     link: "http://hum.ku.dk/uddannelser/aktuelle_studieordninger/retorik/retorik_batv.pdf",
-    courseInfo: "http://kurser.ku.dk/course/hrtb00892u/2017-2018"
+    courseInfo: "http://kurser.ku.dk/course/hrtb00892u/2017-2018",
+    belongingStudy: "2"
 }, {
     id: "22",
     name: "Retorik i samfundet: Temastudium",
@@ -215,7 +224,8 @@ export const courses: Course[] = [{
     graded: true,
     semesterType: [semesterType.spring],
     link: "http://hum.ku.dk/uddannelser/aktuelle_studieordninger/retorik/retorik_batv.pdf",
-    courseInfo: "http://kurser.ku.dk/course/hrtb00882u/2017-2018"
+    courseInfo: "http://kurser.ku.dk/course/hrtb00882u/2017-2018",
+    belongingStudy: "2"
 }, {
     id: "23",
     name: "Argumentationsteori og metode (Logik 1)",
@@ -224,7 +234,8 @@ export const courses: Course[] = [{
     graded: false,
     semesterType: [semesterType.fall],
     link: "http://hum.ku.dk/uddannelser/aktuelle_studieordninger/filosofi/filosofi_gymtv.pdf",
-    courseInfo: "http://kurser.ku.dk/course/hfib00621u/2016-2017"
+    courseInfo: "http://kurser.ku.dk/course/hfib00621u/2016-2017",
+    belongingStudy: "3"
 }, {
     id: "24",
     name: "Teoretisk filosofi: Bevidsthedsfilosofi og metafysik",
@@ -233,7 +244,8 @@ export const courses: Course[] = [{
     graded: true,
     semesterType: [semesterType.fall],
     link: "http://hum.ku.dk/uddannelser/aktuelle_studieordninger/filosofi/filosofi_gymtv.pdf",
-    courseInfo: "http://kurser.ku.dk/course/hfib00462u/2016-2017"
+    courseInfo: "http://kurser.ku.dk/course/hfib00462u/2016-2017",
+    belongingStudy: "3"
 }, {
     id: "25",
     name: "Værklæsning (AFLYST)",
@@ -241,7 +253,8 @@ export const courses: Course[] = [{
     externalCensor: true,
     graded: true,
     semesterType: [semesterType.fall],
-    link: "http://hum.ku.dk/uddannelser/aktuelle_studieordninger/filosofi/filosofi_gymtv.pdf"
+    link: "http://hum.ku.dk/uddannelser/aktuelle_studieordninger/filosofi/filosofi_gymtv.pdf",
+    belongingStudy: "3"
 }, {
     id: "26",
     name: "Filosofisk Æstetik",
@@ -250,7 +263,8 @@ export const courses: Course[] = [{
     graded: true,
     semesterType: [semesterType.fall],
     link: "http://hum.ku.dk/uddannelser/aktuelle_studieordninger/filosofi/filosofi_gymtv.pdf",
-    courseInfo: "http://kurser.ku.dk/course/hfib00511u/2016-2017"
+    courseInfo: "http://kurser.ku.dk/course/hfib00511u/2016-2017",
+    belongingStudy: "3"
 }, {
     id: "27",
     name: "Fænomenologi og eksistensfilosof",
@@ -259,7 +273,8 @@ export const courses: Course[] = [{
     graded: true,
     semesterType: [semesterType.fall],
     link: "http://hum.ku.dk/uddannelser/aktuelle_studieordninger/filosofi/filosofi_gymtv.pdf",
-    courseInfo: "http://kurser.ku.dk/course/hfib00521u/2016-2017"
+    courseInfo: "http://kurser.ku.dk/course/hfib00521u/2016-2017",
+    belongingStudy: "3"
 }, {
     id: "28",
     name: "Anvendt filosofi",
@@ -268,15 +283,17 @@ export const courses: Course[] = [{
     graded: true,
     semesterType: [semesterType.fall],
     link: "http://hum.ku.dk/uddannelser/aktuelle_studieordninger/filosofi/filosofi_gymtv.pdf",
-    courseInfo: "http://kurser.ku.dk/course/hfib00631u/2017-2018"
+    courseInfo: "http://kurser.ku.dk/course/hfib00631u/2017-2018",
+    belongingStudy: "3"
 }, {
     id: "29",
-    name: "Film- og mediehistorie", 
+    name: "Film- og mediehistorie",
     ects: 15,
     externalCensor: false,
     graded: true,
     semesterType: [semesterType.fall],
-    link: "http://hum.ku.dk/uddannelser/aktuelle_studieordninger/film_medievidenskab/film_og_medievidenskab_gymtv.pdf"
+    link: "http://hum.ku.dk/uddannelser/aktuelle_studieordninger/film_medievidenskab/film_og_medievidenskab_gymtv.pdf",
+    belongingStudy: "4"
 }, {
     id: "30",
     name: "Fiktionsteori og -analyse",
@@ -284,8 +301,9 @@ export const courses: Course[] = [{
     externalCensor: false,
     graded: true,
     semesterType: [semesterType.fall],
-    link: "http://hum.ku.dk/uddannelser/aktuelle_studieordninger/film_medievidenskab/film_og_medievidenskab_gymtv.pdf",   
-    courseInfo: "http://kurser.ku.dk/course/hfmb10512u/2017-2018"
+    link: "http://hum.ku.dk/uddannelser/aktuelle_studieordninger/film_medievidenskab/film_og_medievidenskab_gymtv.pdf",
+    courseInfo: "http://kurser.ku.dk/course/hfmb10512u/2017-2018",
+    belongingStudy: "4"
 }, {
     id: "31",
     name: "Filmhistorie inkl. tilvalg",
@@ -294,7 +312,8 @@ export const courses: Course[] = [{
     graded: true,
     semesterType: [semesterType.fall],
     link: "http://hum.ku.dk/uddannelser/aktuelle_studieordninger/film_medievidenskab/film_og_medievidenskab_gymtv.pdf",
-    courseInfo: "http://kurser.ku.dk/course/hfmb00682u/2017-2018"
+    courseInfo: "http://kurser.ku.dk/course/hfmb00682u/2017-2018",
+    belongingStudy: "4"
 }, {
     id: "32",
     name: "Professioner, vidensformer og anvendelse",
@@ -302,15 +321,17 @@ export const courses: Course[] = [{
     externalCensor: false,
     graded: false,
     semesterType: [semesterType.fall],
-    link: "http://hum.ku.dk/uddannelser/aktuelle_studieordninger/paedagogik/paedagogik_batv_2015.pdf"
+    link: "http://hum.ku.dk/uddannelser/aktuelle_studieordninger/paedagogik/paedagogik_batv_2015.pdf",
+    belongingStudy: "5"
 }, {
     id: "33",
-    name: "MANGLER Professioner, vidensformer og anvendelse",    
+    name: "MANGLER Professioner, vidensformer og anvendelse",
     ects: 15,
     externalCensor: false,
     graded: false,
     semesterType: [semesterType.fall],
-    link: "http://hum.ku.dk/uddannelser/aktuelle_studieordninger/paedagogik/paedagogik_batv_2015.pdf"
+    link: "http://hum.ku.dk/uddannelser/aktuelle_studieordninger/paedagogik/paedagogik_batv_2015.pdf",
+    belongingStudy: "5"
 }, {
     id: "34",
     name: "Psykologiske temaer i pædagogik",
@@ -319,7 +340,8 @@ export const courses: Course[] = [{
     graded: true,
     semesterType: [semesterType.fall],
     link: "http://hum.ku.dk/uddannelser/aktuelle_studieordninger/paedagogik/paedagogik_batv_2015.pdf",
-    courseInfo: "http://kurser.ku.dk/course/hpÆb10141u/2016-2017"
+    courseInfo: "http://kurser.ku.dk/course/hpÆb10141u/2016-2017",
+    belongingStudy: "5"
 }, {
     id: "35",
     name: "Komparativ pædagogik og globalisering",
@@ -328,7 +350,8 @@ export const courses: Course[] = [{
     graded: true,
     semesterType: [semesterType.spring],
     link: "http://hum.ku.dk/uddannelser/aktuelle_studieordninger/paedagogik/paedagogik_batv_2015.pdf",
-    courseInfo: "http://kurser.ku.dk/course/hpÆb10151u/2016-2017"
+    courseInfo: "http://kurser.ku.dk/course/hpÆb10151u/2016-2017",
+    belongingStudy: "5"
 }, {
     id: "36",
     name: "Læring i arbejdslivet - individ og organisation",
@@ -337,23 +360,26 @@ export const courses: Course[] = [{
     graded: true,
     semesterType: [semesterType.spring],
     link: "http://hum.ku.dk/uddannelser/aktuelle_studieordninger/paedagogik/paedagogik_batv_2015.pdf",
-    courseInfo: "http://kurser.ku.dk/course/hpÆb10161u/2016-2017"
-},  {
+    courseInfo: "http://kurser.ku.dk/course/hpÆb10161u/2016-2017",
+    belongingStudy: "5"
+}, {
     id: "38",
     name: "Didaktik, curriculumteori og curriculumsociologi",
     ects: 15,
     externalCensor: false,
     graded: false,
     semesterType: [semesterType.fall],
-    link: "http://hum.ku.dk/uddannelser/aktuelle_studieordninger/paedagogik/paedagogik_batv_2015.pdf"
+    link: "http://hum.ku.dk/uddannelser/aktuelle_studieordninger/paedagogik/paedagogik_batv_2015.pdf",
+    belongingStudy: "5"
 }, {
     id: "39",
-    name: "MANGLER Fordybelse i særligt studeret emne",  
+    name: "MANGLER Fordybelse i særligt studeret emne",
     ects: 15,
     externalCensor: true,
     graded: true,
     semesterType: [semesterType.fall],
-    link: "http://hum.ku.dk/uddannelser/aktuelle_studieordninger/paedagogik/paedagogik_batv_2015.pdf"
+    link: "http://hum.ku.dk/uddannelser/aktuelle_studieordninger/paedagogik/paedagogik_batv_2015.pdf",
+    belongingStudy: "5"
 }, {
     id: "40",
     name: "Pædagogisk sociologi og uddannelsessociologi",
@@ -362,7 +388,8 @@ export const courses: Course[] = [{
     graded: true,
     semesterType: [semesterType.spring],
     link: "http://hum.ku.dk/uddannelser/aktuelle_studieordninger/paedagogik/paedagogik_batv_2015.pdf",
-    courseInfo: "http://kurser.ku.dk/course/hpÆb10152u/2017-2018"
+    courseInfo: "http://kurser.ku.dk/course/hpÆb10152u/2017-2018",
+    belongingStudy: "5"
 }, {
     id: "41",
     name: "Pædagogisk forskningspraksis",
@@ -371,6 +398,7 @@ export const courses: Course[] = [{
     graded: true,
     semesterType: [semesterType.spring],
     link: "http://hum.ku.dk/uddannelser/aktuelle_studieordninger/paedagogik/paedagogik_batv_2015.pdf",
-    courseInfo: "http://kurser.ku.dk/course/hpÆb10202u/2017-2018"
+    courseInfo: "http://kurser.ku.dk/course/hpÆb10202u/2017-2018",
+    belongingStudy: "5"
 }
 ];

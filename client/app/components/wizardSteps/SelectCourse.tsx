@@ -4,7 +4,7 @@ import * as ReactDOM from "react-dom";
 import { Link } from 'react-router';
 import * as _ from "lodash";
 
-import { Study, Course, courses, semesterType } from "../../pages/wizard/Data";
+import { Study, Course, courses, studies, semesterType } from "../../pages/wizard/Data";
 import { CourseDescription } from "../courseDescription/CourseDescription";
 
 interface SelectCourseProps {
@@ -128,11 +128,22 @@ export class SelectCourse extends React.Component<SelectCourseProps, SelectCours
         this.props.onCourseSelect(this.state.selectedCourse.id);
     }
 
+    private getGroupedCourses(courses: Course[]) {
+        const sortedStudies = _.sortBy(courses, (course) => { return course.name });
+        const groupedCourses = _.groupBy(sortedStudies, (course) => { return course.belongingStudy });
+        return groupedCourses;
+    }
+
+    private getStudyNameFromId(studyId:string){
+        return _.find(studies, (study) => {return study.id === studyId}).name;
+    }
+
     public render() {
         const isSummerSelected = this.state.selectedSemesterType === semesterType.fall ? "selected" : null;
         const isWinterSelected = this.state.selectedSemesterType === semesterType.spring ? "selected" : null;
 
-        const availableCourses = this.getAvailableCourses();
+        const courses = this.getAvailableCourses();
+        const groupedCourses = this.getGroupedCourses(courses);
 
         return (
             <div className="select-course">
@@ -146,15 +157,21 @@ export class SelectCourse extends React.Component<SelectCourseProps, SelectCours
                     </div>
                 </div>
                 <div className="courses">
-                    {availableCourses.length > 0 ? _.map(availableCourses, (course) => {
+                    {courses.length > 0 ? _.map(groupedCourses, (courses) => {
                         return (
-                            <div className="course" key={course.id} onClick={() => { this.selectCourse(course) } }>
-                                <p className="ects">{course.ects}</p>
-                                <p className="name">{course.name}</p>
-                            </div>
-                        )
-                    }) : (
-                        <div className="no-more-courses-message"><p>Du har allerede valgt nok fag <br />– eller –<br />Der er ikke flere fag, der matcher de gældende krav.</p></div>
+                            <div key={courses[0].belongingStudy} className="course-group">
+                                <p>{this.getStudyNameFromId(courses[0].belongingStudy)}</p>{
+                                    _.map(courses, (course) => {
+                                        return (
+                                            <div className="course" key={course.id} onClick={() => { this.selectCourse(course) } }>
+                                                <p className="ects">{course.ects}</p>
+                                                <p className="name">{course.name}</p>
+                                            </div>
+                                        )
+                                    })}</div>)
+                    })
+                        : (
+                            <div className="no-more-courses-message"><p>Du har allerede valgt nok fag <br />– eller –<br />Der er ikke flere fag, der matcher de gældende krav.</p></div>
                         )}
                 </div>
 
