@@ -132,6 +132,8 @@ export class SelectCourse extends React.Component<SelectCourseProps, SelectCours
         const isSummerSelected = this.state.selectedSemesterType === semesterType.fall ? "selected" : null;
         const isWinterSelected = this.state.selectedSemesterType === semesterType.spring ? "selected" : null;
 
+        const availableCourses = this.getAvailableCourses();
+
         return (
             <div className="select-course">
                 <h2 className="headline">Vælg kursus</h2>
@@ -144,14 +146,16 @@ export class SelectCourse extends React.Component<SelectCourseProps, SelectCours
                     </div>
                 </div>
                 <div className="courses">
-                    {_.map(this.getAvailableCourses(), (course) => {
+                    {availableCourses.length > 0 ? _.map(availableCourses, (course) => {
                         return (
                             <div className="course" key={course.id} onClick={() => { this.selectCourse(course) } }>
                                 <p className="ects">{course.ects}</p>
                                 <p className="name">{course.name}</p>
                             </div>
                         )
-                    })}
+                    }) : (
+                        <div className="no-more-courses-message"><p>Du har allerede valgt nok fag <br />– eller –<br />Der er ikke flere fag, der matcher de gældende krav.</p></div>
+                        )}
                 </div>
 
                 {this.state.selectedCourse === null ? null : <CourseDescription courseName={this.state.selectedCourse.name} courseDescriptionLink={this.state.selectedCourse.courseInfo} courseId={this.state.selectedCourse.id} onSelectCourse={() => { this.confirmCourseSelection() } } onClose={() => { this.deselectCourse() } } />}
