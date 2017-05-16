@@ -28,7 +28,7 @@ export const studies: Study[] = [{
 }, {
     id: "2",
     name: "Retorik",
-    basicCourses: ["19", "20", "21", "42", "43", "44", "45", "46", "47"]
+    basicCourses: ["19", "20", "21", "42", "43", "44", "45", "46", "48", "47"]
 }, {
     id: "3",
     name: "Filosofi",
@@ -456,7 +456,17 @@ export const courses: Course[] = [{
     ects: 15,
     externalCensor: true,
     graded: true,
-    semesterType: [semesterType.fall],
+    semesterType: [semesterType.spring],
+    link: "http://hum.ku.dk/uddannelser/aktuelle_studieordninger/retorik/retorik_ba.pdf",
+    courseInfo: "http://kurser.ku.dk/course/hrtb00821u/2016-2017",
+    belongingStudy: "2"
+}, {
+    id: "48",
+    name: "Retorik i samfundet: Temastudium",
+    ects: 15,
+    externalCensor: true,
+    graded: true,
+    semesterType: [semesterType.spring],
     link: "http://hum.ku.dk/uddannelser/aktuelle_studieordninger/retorik/retorik_ba.pdf",
     courseInfo: "http://kurser.ku.dk/course/hrtb00821u/2016-2017",
     belongingStudy: "2"
