@@ -40,7 +40,7 @@ export const studies: Study[] = [{
 }, {
     id: "5",
     name: "Pædagogik",
-    basicCourses: ["32", "33", "34", "35", "36", "38", "39", "40", "41"]
+    basicCourses: ["70", "71", "72", "73", "74", "75", "76", "77"]
 }];
 
 export const courses: Course[] = [{
@@ -313,26 +313,6 @@ export const courses: Course[] = [{
     link: "http://hum.ku.dk/uddannelser/aktuelle_studieordninger/paedagogik/paedagogik_batv_2015.pdf",
     belongingStudy: "5"
 }, {
-    id: "34",
-    name: "Psykologiske temaer i pædagogik",
-    ects: 15,
-    externalCensor: true,
-    graded: true,
-    semesterType: [semesterType.fall],
-    link: "http://hum.ku.dk/uddannelser/aktuelle_studieordninger/paedagogik/paedagogik_batv_2015.pdf",
-    courseInfo: "http://kurser.ku.dk/course/hpÆb10141u/2016-2017",
-    belongingStudy: "5"
-}, {
-    id: "35",
-    name: "Komparativ pædagogik og globalisering",
-    ects: 15,
-    externalCensor: true,
-    graded: true,
-    semesterType: [semesterType.spring],
-    link: "http://hum.ku.dk/uddannelser/aktuelle_studieordninger/paedagogik/paedagogik_batv_2015.pdf",
-    courseInfo: "http://kurser.ku.dk/course/hpÆb10151u/2016-2017",
-    belongingStudy: "5"
-}, {
     id: "36",
     name: "Læring i arbejdslivet - individ og organisation",
     ects: 15,
@@ -342,15 +322,7 @@ export const courses: Course[] = [{
     link: "http://hum.ku.dk/uddannelser/aktuelle_studieordninger/paedagogik/paedagogik_batv_2015.pdf",
     courseInfo: "http://kurser.ku.dk/course/hpÆb10161u/2016-2017",
     belongingStudy: "5"
-}, {
-    id: "38",
-    name: "Didaktik, curriculumteori og curriculumsociologi",
-    ects: 15,
-    externalCensor: false,
-    graded: false,
-    semesterType: [semesterType.fall],
-    link: "http://hum.ku.dk/uddannelser/aktuelle_studieordninger/paedagogik/paedagogik_batv_2015.pdf",
-    belongingStudy: "5"
+
 }, {
     id: "39",
     name: "MANGLER Fordybelse i særligt studeret emne",
@@ -359,26 +331,6 @@ export const courses: Course[] = [{
     graded: true,
     semesterType: [semesterType.fall],
     link: "http://hum.ku.dk/uddannelser/aktuelle_studieordninger/paedagogik/paedagogik_batv_2015.pdf",
-    belongingStudy: "5"
-}, {
-    id: "40",
-    name: "Pædagogisk sociologi og uddannelsessociologi",
-    ects: 15,
-    externalCensor: true,
-    graded: true,
-    semesterType: [semesterType.spring],
-    link: "http://hum.ku.dk/uddannelser/aktuelle_studieordninger/paedagogik/paedagogik_batv_2015.pdf",
-    courseInfo: "http://kurser.ku.dk/course/hpÆb10152u/2017-2018",
-    belongingStudy: "5"
-}, {
-    id: "41",
-    name: "Pædagogisk forskningspraksis",
-    ects: 15,
-    externalCensor: false,
-    graded: true,
-    semesterType: [semesterType.spring],
-    link: "http://hum.ku.dk/uddannelser/aktuelle_studieordninger/paedagogik/paedagogik_batv_2015.pdf",
-    courseInfo: "http://kurser.ku.dk/course/hpÆb10202u/2017-2018",
     belongingStudy: "5"
 }, {
     id: "42",
@@ -660,5 +612,85 @@ export const courses: Course[] = [{
     link: "http://hum.ku.dk/uddannelser/aktuelle_studieordninger/film_medievidenskab/film_og_medievidenskab_gymtv.pdf",
     courseInfo: "http://kurser.ku.dk/course/hfmb00732u/2017-2018",
     belongingStudy: "4"
+}, {
+    id: "70",
+    name: "Pædagogikken aktuelt",
+    ects: 15,
+    externalCensor: false,
+    graded: true,
+    semesterType: [semesterType.fall],
+    link: "http://hum.ku.dk/uddannelser/aktuelle_studieordninger/paedagogik/paedagogik_batv_2015.pdf",
+    courseInfo: "http://kurser.ku.dk/course/hp%C3%86b00351u/2016-2017",
+    belongingStudy: "5"
+}, {
+    id: "71",
+    name: "Pædagogiskkens historie",
+    ects: 15,
+    externalCensor: false,
+    graded: false,
+    semesterType: [semesterType.fall],
+    link: "http://hum.ku.dk/uddannelser/aktuelle_studieordninger/paedagogik/paedagogik_batv_2015.pdf",
+    courseInfo: "http://kurser.ku.dk/course/hp%C3%86b00461u/2017-2018",
+    belongingStudy: "5"
+}, {
+    id: "72",
+    name: "Pædagogisk sociologi og uddannelsessociologi",
+    ects: 15,
+    externalCensor: true,
+    graded: true,
+    semesterType: [semesterType.spring],
+    link: "http://hum.ku.dk/uddannelser/aktuelle_studieordninger/paedagogik/paedagogik_batv_2015.pdf",
+    courseInfo: "http://kurser.ku.dk/course/hpÆb10152u/2017-2018",
+    belongingStudy: "5"
+}, {
+    id: "73",
+    name: "Pædagogisk videnskabsteori og forskningsmetode",
+    ects: 15,
+    externalCensor: false,
+    graded: true,
+    semesterType: [semesterType.spring],
+    link: "http://hum.ku.dk/uddannelser/aktuelle_studieordninger/paedagogik/paedagogik_batv_2015.pdf",
+    courseInfo: "http://kurser.ku.dk/course/hp%C3%86b00381u/2016-2017",
+    belongingStudy: "5"    
+}, {
+    id: "74",
+    name: "Didaktik, curriculumteori og curriculumsociologi",
+    ects: 15,
+    externalCensor: false,
+    graded: true,
+    semesterType: [semesterType.fall],
+    link: "http://hum.ku.dk/uddannelser/aktuelle_studieordninger/paedagogik/paedagogik_batv_2015.pdf",
+    courseInfo: "http://kurser.ku.dk/course/hp%C3%86b00391u/2017-2018",
+    belongingStudy: "5"
+}, {
+    id: "75",
+    name: "Psykologiske temaer i pædagogik",
+    ects: 15,
+    externalCensor: true,
+    graded: true,
+    semesterType: [semesterType.fall],
+    link: "http://hum.ku.dk/uddannelser/aktuelle_studieordninger/paedagogik/paedagogik_batv_2015.pdf",
+    courseInfo: "http://kurser.ku.dk/course/hpÆb10141u/2016-2017",
+    belongingStudy: "5"
+}, {
+    id: "76",
+    name: "Komparativ pædagogik og globalisering",
+    ects: 15,
+    externalCensor: true,
+    graded: true,
+    semesterType: [semesterType.spring],
+    link: "http://hum.ku.dk/uddannelser/aktuelle_studieordninger/paedagogik/paedagogik_batv_2015.pdf",
+    courseInfo: "http://kurser.ku.dk/course/hpÆb10151u/2016-2017",
+    belongingStudy: "5"
+}, {
+    id: "77",
+    name: "Pædagogisk forskningspraksis",
+    ects: 15,
+    externalCensor: false,
+    graded: true,
+    semesterType: [semesterType.spring],
+    link: "http://hum.ku.dk/uddannelser/aktuelle_studieordninger/paedagogik/paedagogik_batv_2015.pdf",
+    courseInfo: "http://kurser.ku.dk/course/hpÆb10202u/2017-2018",
+    belongingStudy: "5"
 }
 ];
