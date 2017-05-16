@@ -28,7 +28,7 @@ export const studies: Study[] = [{
 }, {
     id: "2",
     name: "Retorik",
-    basicCourses: ["19", "20", "21", "22"]
+    basicCourses: ["19", "20", "21", "42", "43", "44", "45", "46", "47"]
 }, {
     id: "3",
     name: "Filosofi",
@@ -198,23 +198,23 @@ export const courses: Course[] = [{
     belongingStudy: "2"
 }, {
     id: "20",
-    name: "Retorisk skrivning og rådgivning",
+    name: "Retorisk skrivning, sprog og stil",
     ects: 15,
     externalCensor: false,
     graded: true,
     semesterType: [semesterType.fall],
     link: "http://hum.ku.dk/uddannelser/aktuelle_studieordninger/retorik/retorik_ba.pdf",
-    courseInfo: "http://kurser.ku.dk/course/hrtb00821u/2017-2018",
+    courseInfo: "http://kurser.ku.dk/course/HRTB00811U/2017-2018",
     belongingStudy: "2"
 }, {
     id: "21",
-    name: "Taleværksted og -rådgivning",
+    name: "Retorisk skrivning og rådgivning",
     ects: 15,
-    externalCensor: true,
+    externalCensor: false,
     graded: true,
     semesterType: [semesterType.spring],
     link: "http://hum.ku.dk/uddannelser/aktuelle_studieordninger/retorik/retorik_batv.pdf",
-    courseInfo: "http://kurser.ku.dk/course/hrtb00892u/2017-2018",
+    courseInfo: "http://kurser.ku.dk/course/hrtb00821u/2016-2017",
     belongingStudy: "2"
 }, {
     id: "22",
@@ -400,5 +400,65 @@ export const courses: Course[] = [{
     link: "http://hum.ku.dk/uddannelser/aktuelle_studieordninger/paedagogik/paedagogik_batv_2015.pdf",
     courseInfo: "http://kurser.ku.dk/course/hpÆb10202u/2017-2018",
     belongingStudy: "5"
+}, {
+    id: "42",
+    name: "Argumentation",
+    ects: 7.5,
+    externalCensor: false,
+    graded: false,
+    semesterType: [semesterType.spring],
+    link: "http://hum.ku.dk/uddannelser/aktuelle_studieordninger/retorik/retorik_ba.pdf",
+    courseInfo: "http://kurser.ku.dk/course/HRTB00832U/2017-2018",
+    belongingStudy: "2"
+}, {
+    id: "43",
+    name: "Stemmebrug",
+    ects: 7.5,
+    externalCensor: false,
+    graded: false,
+    semesterType: [semesterType.spring],
+    link: "http://hum.ku.dk/uddannelser/aktuelle_studieordninger/retorik/retorik_ba.pdf",
+    courseInfo: "http://kurser.ku.dk/course/hrtb00842u/2017-2018",
+    belongingStudy: "2"
+}, {
+    id: "44",
+    name: "Fortælling og oplæsning",
+    ects: 7.5,
+    externalCensor: false,
+    graded: false,
+    semesterType: [semesterType.fall],
+    link: "http://hum.ku.dk/uddannelser/aktuelle_studieordninger/retorik/retorik_ba.pdf",
+    courseInfo: "http://kurser.ku.dk/course/hrtb00851u/2017-2018",
+    belongingStudy: "2"
+}, {
+    id: "45",
+    name: "Videnskabsteori",
+    ects: 7.5,
+    externalCensor: false,
+    graded: false,
+    semesterType: [semesterType.fall],
+    link: "http://hum.ku.dk/uddannelser/aktuelle_studieordninger/retorik/retorik_ba.pdf",
+    courseInfo: "http://kurser.ku.dk/course/hrtb00861u/2017-2018",
+    belongingStudy: "2"
+}, {
+    id: "46",
+    name: "Retorisk kritik",
+    ects: 15,
+    externalCensor: true,
+    graded: true,
+    semesterType: [semesterType.fall],
+    link: "http://hum.ku.dk/uddannelser/aktuelle_studieordninger/retorik/retorik_ba.pdf",
+    courseInfo: "http://kurser.ku.dk/course/hrtb00871u/2017-2018",
+    belongingStudy: "2"
+}, {
+    id: "47",
+    name: "Taleværksted og - rådgivning",
+    ects: 15,
+    externalCensor: true,
+    graded: true,
+    semesterType: [semesterType.fall],
+    link: "http://hum.ku.dk/uddannelser/aktuelle_studieordninger/retorik/retorik_ba.pdf",
+    courseInfo: "http://kurser.ku.dk/course/hrtb00821u/2016-2017",
+    belongingStudy: "2"
 }
 ];
