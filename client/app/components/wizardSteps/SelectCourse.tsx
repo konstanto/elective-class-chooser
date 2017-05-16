@@ -9,7 +9,6 @@ import { CourseDescription } from "../courseDescription/CourseDescription";
 
 interface SelectCourseProps {
     selectedCourses: string[];
-    selectedSemester: string;
     onCourseSelect(courseId: string): void;
 }
 
@@ -22,7 +21,7 @@ export class SelectCourse extends React.Component<SelectCourseProps, SelectCours
     constructor(props: SelectCourseProps) {
         super(props);
         this.state = {
-            selectedSemesterType: props.selectedSemester === "5" ? semesterType.spring : semesterType.fall,
+            selectedSemesterType: semesterType.fall,
             selectedCourse: null
         }
     }
@@ -150,10 +149,10 @@ export class SelectCourse extends React.Component<SelectCourseProps, SelectCours
                 <h2 className="headline">Vælg kursus</h2>
                 <div className="semester-type-selector">
                     <div className={"tab " + isSummerSelected} onClick={() => { this.setState({ selectedSemesterType: semesterType.fall }) } }>
-                        <p>Efterårssemester</p>
+                        <p>5. semester</p>
                     </div>
                     <div className={"tab " + isWinterSelected} onClick={() => { this.setState({ selectedSemesterType: semesterType.spring }) } }>
-                        <p>Forårssemester</p>
+                        <p>6. semester </p>
                     </div>
                 </div>
                 <div className="courses">

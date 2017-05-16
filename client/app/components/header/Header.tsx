@@ -9,11 +9,11 @@ export class Header extends React.Component<void, void>{
             <div className="header">
                 <div className="header-content">
                     <div className="logo">
-                        <Link to="/"><div className="logo-image"></div></Link>
+                        <a href="/"><div className="logo-image"></div></a>
                     </div>
                     <div className="menu">
                         <Link to="/info/regler">Regler</Link>
-                        <Link to="/info/koncept">Koncept</Link>
+                        <Link to="/info/om">Om</Link>
                         <Link to="/info/juridisk">Juridisk</Link>
                     </div>
                 </div>

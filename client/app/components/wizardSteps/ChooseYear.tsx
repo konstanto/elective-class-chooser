@@ -7,19 +7,14 @@ import { semesterType } from "../../pages/wizard/Data";
 
 interface ChooseStudyProps {
     startingYear: string;
-    semester: string;
+    bachelorSemester: semesterType;
     onChangeStartingYear(value: string): void;
-    onChangeSemester(value: string): void;
     onBachelorSelect(value: string): void;
 }
 
 export class ChooseYear extends React.Component<ChooseStudyProps, void>{
     private onChangeStartingYear(element: HTMLSelectElement) {
         this.props.onChangeStartingYear(element.value)
-    }
-
-    private onChangeSemester(element: HTMLSelectElement) {
-        this.props.onChangeSemester(element.value)
     }
 
     private onBachelorSelect(element: HTMLSelectElement) {
@@ -41,18 +36,8 @@ export class ChooseYear extends React.Component<ChooseStudyProps, void>{
                     <option value="2012">2012</option>
                 </select>
 
-                <h2 className="select-headline">Hvilket semester er du på nu?</h2>
-                <select tabIndex={2} value={this.props.semester} onChange={(element) => { this.onChangeSemester(element.currentTarget) } }>
-                    <option value={null}>-- Vælg semester --</option>
-                    <option value="5">5. semester</option>
-                    <option value="4">4. semester</option>
-                    <option value="3">3. semester</option>
-                    <option value="2">2. semester</option>
-                    <option value="1">1. semester</option>
-                </select>
-
                 <h2 className="select-headline">Hvornår vil du skrive bachelorprojekt?</h2>
-                <select tabIndex={3} value={this.props.semester} onChange={(element) => { this.onBachelorSelect(element.currentTarget) } }>
+                <select tabIndex={3} value={this.props.bachelorSemester} onChange={(element) => { this.onBachelorSelect(element.currentTarget) } }>
                     <option value={null}>-- Vælg semester --</option>
                     <option value={semesterType.fall}>5. semester</option>
                     <option value={semesterType.spring}>6. semester</option>

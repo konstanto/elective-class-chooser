@@ -8,7 +8,7 @@ import {LayoutStandalone} from "./pages/layoutStandalone/LayoutStandalone";
 import {Wizard} from "./pages/wizard/Wizard";
 import {Rules} from "./pages/rules/Rules";
 import {Legal} from "./pages/legal/Legal";
-import {Concept} from "./pages/concept/Concept";
+import {About} from "./pages/about/About";
 
 export const browserHistory = ReactRouter.useRouterHistory(History.createHistory)({ basename: "/f2017e/a/8/" });
 //export const browserHistory = ReactRouter.useRouterHistory(History.createHistory)({ basename: "/" });
@@ -21,7 +21,7 @@ let routes = (
         <ReactRouter.Route path="/info/" component={LayoutStandalone}>
             <ReactRouter.IndexRoute component={Rules} />
             <ReactRouter.Route path="regler" component={Rules} />
-            <ReactRouter.Route path="koncept" component={Concept} />
+            <ReactRouter.Route path="om" component={About} />
             <ReactRouter.Route path="juridisk" component={Legal} />
         </ReactRouter.Route>
     </ReactRouter.Router>

@@ -15,10 +15,10 @@ import { Study, Course, courses, studies, semesterType } from "./Data";
 
 interface WizardState {
     study?: string;
-    semester?: string;
     startingYear?: string;
     selectedElectiveCourses?: string[];
     shouldShowFurtherProcessDialog?: boolean;
+    bachelorSemesterType?: semesterType;
 }
 
 export class Wizard extends React.Component<void, WizardState>{
@@ -29,10 +29,10 @@ export class Wizard extends React.Component<void, WizardState>{
         super();
         this.state = {
             study: "",
-            semester: "",
             startingYear: "",
             selectedElectiveCourses: [],
-            shouldShowFurtherProcessDialog: false
+            shouldShowFurtherProcessDialog: false,
+            bachelorSemesterType: null
         }
     }
 
@@ -56,10 +56,6 @@ export class Wizard extends React.Component<void, WizardState>{
             selectedCourseObjects.push(_.find(courses, (course) => { return course.id === selectedCourse }));
         });
         return selectedCourseObjects;
-    }
-
-    private selectSemester(value: string) {
-        this.setState({ semester: value });        
     }
 
     private selectCourse(course: string) {
@@ -98,8 +94,12 @@ export class Wizard extends React.Component<void, WizardState>{
 
     private selectBachelorPosition(semesterTypeForBachelor: string) {
         const selectedCourses = this.state.selectedElectiveCourses;
+        _.remove(selectedCourses, (course) => {
+            return course === this.bachelorIdFall || course === this.bachelorIdSpring;
+        });
+
         selectedCourses.push(semesterTypeForBachelor === "1" ? this.bachelorIdFall : this.bachelorIdSpring);
-        this.setState({ selectedElectiveCourses: selectedCourses });
+        this.setState({ selectedElectiveCourses: selectedCourses, bachelorSemesterType: semesterTypeForBachelor === "1" ? semesterType.spring : semesterType.fall});
     }
 
     private getCurrentWizardStep() {
@@ -109,15 +109,14 @@ export class Wizard extends React.Component<void, WizardState>{
             case 2:
                 return (
                     <div className="wizard-step">
-                        <ChooseYear startingYear={this.state.startingYear} semester={this.state.semester} onChangeStartingYear={(value: string) => { this.selectStartingYear(value) } } onChangeSemester={(value: string) => { this.selectSemester(value) } } onBachelorSelect={(value: string) => { this.selectBachelorPosition(value) } } />
-                        <CourseOverview shouldBeDisabled={true} deSelectCourse={(courseId: string) => { this.deSelectCourse(courseId) } } semester={this.state.semester} selectedElectiveCourses={this.state.selectedElectiveCourses} selectedStudyId={this.state.study} />
+                        <ChooseYear bachelorSemester={this.state.bachelorSemesterType} startingYear={this.state.startingYear} onChangeStartingYear={(value: string) => { this.selectStartingYear(value) } } onBachelorSelect={(value: string) => { this.selectBachelorPosition(value) } } />
                     </div>
                 )
             case 3:
                 return (
                     <div className="wizard-step">
-                        <SelectCourse selectedSemester={this.state.semester} onCourseSelect={(course) => { this.selectCourse(course) } } selectedCourses={this.state.selectedElectiveCourses} />
-                        <CourseOverview shouldBeDisabled={false} deSelectCourse={(courseId: string) => { this.deSelectCourse(courseId) } } semester={this.state.semester} selectedElectiveCourses={this.state.selectedElectiveCourses} selectedStudyId={this.state.study} />
+                        <SelectCourse onCourseSelect={(course) => { this.selectCourse(course) } } selectedCourses={this.state.selectedElectiveCourses} />
+                        <CourseOverview shouldBeDisabled={false} deSelectCourse={(courseId: string) => { this.deSelectCourse(courseId) } } selectedElectiveCourses={this.state.selectedElectiveCourses} selectedStudyId={this.state.study} />
                     </div>
                 )
         }
@@ -126,17 +125,17 @@ export class Wizard extends React.Component<void, WizardState>{
     private startOver() {
         this.setState({
             study: "",
-            semester: "",
             startingYear: "",
             selectedElectiveCourses: [],
-            shouldShowFurtherProcessDialog: false
+            shouldShowFurtherProcessDialog: false,
+            bachelorSemesterType: null
         });
     }
 
     private goToChooseYear() {
         this.setState({
-            semester: "",
-            startingYear: ""
+            startingYear: "",
+            bachelorSemesterType: null
         });
 
         const selectedCourses = this.state.selectedElectiveCourses;
@@ -155,7 +154,7 @@ export class Wizard extends React.Component<void, WizardState>{
     private getStepIndex() {
         if (this.state.study.length === 0) {
             return 1;
-        } else if (this.state.semester.length === 0 || this.state.startingYear.length === 0 || (this.state.selectedElectiveCourses.indexOf(this.bachelorIdFall) === -1 && this.state.selectedElectiveCourses.indexOf(this.bachelorIdSpring) === -1)) {
+        } else if (this.state.startingYear.length === 0 || (this.state.selectedElectiveCourses.indexOf(this.bachelorIdFall) === -1 && this.state.selectedElectiveCourses.indexOf(this.bachelorIdSpring) === -1)) {
             return 2;
         } else {
             return 3;

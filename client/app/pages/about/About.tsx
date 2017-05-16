@@ -1,4 +1,4 @@
-import "./Concept.less";
+import "./About.less";
 import * as React from "react";
 import * as ReactDOM from "react-dom";
 import { Link } from "react-router";
@@ -6,8 +6,8 @@ import { Link } from "react-router";
 export class About extends React.Component<void, void>{
     public render() {
         return (
-            <div className="concept">
-                <h1>Koncept</h1>
+            <div className="about">
+                <h1>Om</h1>
                 <p>Er du også ved at drukne i formaliteter? Det var vi!</p>
 
                 <p>Derfor har vi besluttet, at det skal være nemmere for bachelorstuderende at vælge valgfag på KU.</p>

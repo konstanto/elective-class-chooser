@@ -7,7 +7,6 @@ import * as _ from "lodash";
 import { Study, Course, semesterType, courses, studies } from "../../pages/wizard/Data";
 
 interface CourseOverviewProps {
-    semester: string
     selectedElectiveCourses: string[];
     deSelectCourse(id: string): void;
     selectedStudyId: string;
@@ -74,13 +73,13 @@ export class CourseOverview extends React.Component<CourseOverviewProps, CourseO
                     </div>
                     <div className="semester fall">
                         <div className="semester-headline">
-                            <p>Efterårssemester</p>
+                            <p>Efterår</p>
                         </div>
                         {_.map(this.state.selectedElectiveCourses.filter((electiveCourse: Course) => { return _.includes(electiveCourse.semesterType, semesterType.fall) }), (course) => { return this.getCourseBlocks(course); })}
                     </div>
                     <div className="semester spring">
                         <div className="semester-headline">
-                            <p>Forårssemester</p>
+                            <p>Forår</p>
                         </div>
                         {_.map(this.state.selectedElectiveCourses.filter((electiveCourse: Course) => { return _.includes(electiveCourse.semesterType, semesterType.spring) }), (course) => { return this.getCourseBlocks(course); })}
                     </div>

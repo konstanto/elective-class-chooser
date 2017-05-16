@@ -8,7 +8,7 @@ export class Footer extends React.Component<void, void>{
         return (
             <div className="footer">
                 <div className="footer-content">
-                    <p><a href="mailto:info@dinevalgfag.dk">info@dinevalgfag.dk</a></p>
+                    <p><a href="mailto:info@valgfagsvælgeren.dk">info@valgfagsvælgeren.dk</a></p>
                 </div>
             </div>
         );
