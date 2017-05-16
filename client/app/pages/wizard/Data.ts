@@ -32,11 +32,11 @@ export const studies: Study[] = [{
 }, {
     id: "3",
     name: "Filosofi",
-    basicCourses: ["23", "24", "25", "26", "27", "28"]
+    basicCourses: ["49", "50", "51", "52", "53", "54", "55", "56", "57", "58", "59"]
 }, {
     id: "4",
     name: "Film- og medievidenskab",
-    basicCourses: ["29", "30", "31"]
+    basicCourses: ["60", "61", "62", "63", "64", "65", "66", "67", "68", "69"]
 }, {
     id: "5",
     name: "Pædagogik",
@@ -227,16 +227,6 @@ export const courses: Course[] = [{
     courseInfo: "http://kurser.ku.dk/course/hrtb00882u/2017-2018",
     belongingStudy: "2"
 }, {
-    id: "23",
-    name: "Argumentationsteori og metode (Logik 1)",
-    ects: 15,
-    externalCensor: false,
-    graded: false,
-    semesterType: [semesterType.fall],
-    link: "http://hum.ku.dk/uddannelser/aktuelle_studieordninger/filosofi/filosofi_gymtv.pdf",
-    courseInfo: "http://kurser.ku.dk/course/hfib00621u/2016-2017",
-    belongingStudy: "3"
-}, {
     id: "24",
     name: "Teoretisk filosofi: Bevidsthedsfilosofi og metafysik",
     ects: 15,
@@ -293,16 +283,6 @@ export const courses: Course[] = [{
     graded: true,
     semesterType: [semesterType.fall],
     link: "http://hum.ku.dk/uddannelser/aktuelle_studieordninger/film_medievidenskab/film_og_medievidenskab_gymtv.pdf",
-    belongingStudy: "4"
-}, {
-    id: "30",
-    name: "Fiktionsteori og -analyse",
-    ects: 15,
-    externalCensor: false,
-    graded: true,
-    semesterType: [semesterType.fall],
-    link: "http://hum.ku.dk/uddannelser/aktuelle_studieordninger/film_medievidenskab/film_og_medievidenskab_gymtv.pdf",
-    courseInfo: "http://kurser.ku.dk/course/hfmb10512u/2017-2018",
     belongingStudy: "4"
 }, {
     id: "31",
@@ -470,5 +450,215 @@ export const courses: Course[] = [{
     link: "http://hum.ku.dk/uddannelser/aktuelle_studieordninger/retorik/retorik_ba.pdf",
     courseInfo: "http://kurser.ku.dk/course/hrtb00821u/2016-2017",
     belongingStudy: "2"
+}, {
+    id: "49",
+    name: "Etik og politisk filosofi",
+    ects: 15,
+    externalCensor: true,
+    graded: true,
+    semesterType: [semesterType.fall],
+    link: "http://hum.ku.dk/uddannelser/aktuelle_studieordninger/filosofi/filosofi_gymtv.pdf",
+    courseInfo: "http://kurser.ku.dk/course/hfib00601u/2017-2018",
+    belongingStudy: "3"
+}, {
+    id: "50",
+    name: "Antikkens og middelalderens filosofi",
+    ects: 15,
+    externalCensor: false,
+    graded: true,
+    semesterType: [semesterType.fall],
+    link: "http://hum.ku.dk/uddannelser/aktuelle_studieordninger/filosofi/filosofi_gymtv.pdf",
+    courseInfo: "http://kurser.ku.dk/course/hfi%C3%8500611u/2017-2018",
+    belongingStudy: "3"
+}, {
+    id: "51",
+    name: "Argumentationsteori og metode",
+    ects: 7.5,
+    externalCensor: false,
+    graded: false,
+    semesterType: [semesterType.spring],
+    link: "http://hum.ku.dk/uddannelser/aktuelle_studieordninger/filosofi/filosofi_gymtv.pdf",
+    courseInfo: "http://kurser.ku.dk/course/hfib00622u/2017-2018",
+    belongingStudy: "3"
+}, {
+    id: "52",
+    name: "Anvendt filosofi / Formel logik",
+    ects: 7.5,
+    externalCensor: false,
+    graded: true,
+    semesterType: [semesterType.spring],
+    link: "http://hum.ku.dk/uddannelser/aktuelle_studieordninger/filosofi/filosofi_gymtv.pdf",
+    courseInfo: "http://kurser.ku.dk/course/hfib00631u/2017-2018",
+    belongingStudy: "3"
+}, {
+    id: "53",
+    name: "Renæssancens og nyere tids filosofi",
+    ects: 15,
+    externalCensor: false,
+    graded: true,
+    semesterType: [semesterType.spring],
+    link: "http://hum.ku.dk/uddannelser/aktuelle_studieordninger/filosofi/filosofi_gymtv.pdf",
+    courseInfo: "http://kurser.ku.dk/course/hfib00652u/2017-2018",
+    belongingStudy: "3"
+}, {
+    id: "54",
+    name: "Erkendelsesteori og bevidsthedsfilosofi",
+    ects: 15,
+    externalCensor: true,
+    graded: true,
+    semesterType: [semesterType.fall],
+    link: "http://hum.ku.dk/uddannelser/aktuelle_studieordninger/filosofi/filosofi_gymtv.pdf",
+    courseInfo: "http://kurser.ku.dk/course/hfib00661u/2017-2018",
+    belongingStudy: "3"
+}, {
+    id: "55",
+    name: "Fænomenologi, hermenutik og dekonstruktion",
+    ects: 15,
+    externalCensor: false,
+    graded: true,
+    semesterType: [semesterType.fall],
+    link: "http://hum.ku.dk/uddannelser/aktuelle_studieordninger/filosofi/filosofi_gymtv.pdf",
+    courseInfo: "http://kurser.ku.dk/course/hfib00671u/2017-2018",
+    belongingStudy: "3"
+}, {
+    id: "56",
+    name: "Sprogfilosofi",
+    ects: 7.5,
+    externalCensor: true,
+    graded: true,
+    semesterType: [semesterType.spring],
+    link: "http://hum.ku.dk/uddannelser/aktuelle_studieordninger/filosofi/filosofi_gymtv.pdf",
+    courseInfo: "http://kurser.ku.dk/course/hfib00682u/2017-2018",
+    belongingStudy: "3"
+}, {
+    id: "57",
+    name: "Videnskabsfilosofi",
+    ects: 7.5,
+    externalCensor: true,
+    graded: true,
+    semesterType: [semesterType.spring],
+    link: "http://hum.ku.dk/uddannelser/aktuelle_studieordninger/filosofi/filosofi_gymtv.pdf",
+    courseInfo: "http://kurser.ku.dk/course/hfib00692u/2017-2018",
+    belongingStudy: "3"
+}, {
+    id: "58",
+    name: "Metafysik / Filosofisk æstetik",
+    ects: 7.5,
+    externalCensor: false,
+    graded: true,
+    semesterType: [semesterType.spring],
+    link: "http://hum.ku.dk/uddannelser/aktuelle_studieordninger/filosofi/filosofi_gymtv.pdf",
+    courseInfo: "http://kurser.ku.dk/course/hfib00702u/2017-2018",
+    belongingStudy: "3"
+}, {
+    id: "59",
+    name: "Metaetik / Værklæsning",
+    ects: 7.5,
+    externalCensor: false,
+    graded: true,
+    semesterType: [semesterType.spring],
+    link: "http://hum.ku.dk/uddannelser/aktuelle_studieordninger/filosofi/filosofi_gymtv.pdf",
+    courseInfo: "http://kurser.ku.dk/course/hfib00722u/2017-2018",
+    belongingStudy: "3"
+}, {
+    id: "60",
+    name: "Kultur og Kommunikationsteori",
+    ects: 7.5,
+    externalCensor: false,
+    graded: false,
+    semesterType: [semesterType.fall],
+    link: "http://hum.ku.dk/uddannelser/aktuelle_studieordninger/film_medievidenskab/film_og_medievidenskab_gymtv.pdf",
+    courseInfo: "http://kurser.ku.dk/course/hfmb00641u/2017-2018",
+    belongingStudy: "4"
+}, {
+    id: "61",
+    name: "Introduktion til audiovisuel teori og analyse",
+    ects: 7.5,
+    externalCensor: false,
+    graded: false,
+    semesterType: [semesterType.fall],
+    link: "http://hum.ku.dk/uddannelser/aktuelle_studieordninger/film_medievidenskab/film_og_medievidenskab_gymtv.pdf",
+    courseInfo: "http://kurser.ku.dk/course/hfmb00651u/2017-2018",
+    belongingStudy: "4"
+}, {
+    id: "62",
+    name: "Mediehistorie",
+    ects: 15,
+    externalCensor: false,
+    graded: true,
+    semesterType: [semesterType.fall],
+    link: "http://hum.ku.dk/uddannelser/aktuelle_studieordninger/film_medievidenskab/film_og_medievidenskab_gymtv.pdf",
+    courseInfo: "http://kurser.ku.dk/course/hfmb00661u/2017-2018",
+    belongingStudy: "4"
+}, {
+    id: "63",
+    name: "Fiktionsteori- og analyse",
+    ects: 15,
+    externalCensor: true,
+    graded: true,
+    semesterType: [semesterType.spring],
+    link: "http://hum.ku.dk/uddannelser/aktuelle_studieordninger/film_medievidenskab/film_og_medievidenskab_gymtv.pdf",
+    courseInfo: "http://kurser.ku.dk/course/hfmb00672u/2017-2018",
+    belongingStudy: "4"
+}, {
+    id: "64",
+    name: "Filmhistorie",
+    ects: 15,
+    externalCensor: false,
+    graded: true,
+    semesterType: [semesterType.spring],
+    link: "http://hum.ku.dk/uddannelser/aktuelle_studieordninger/film_medievidenskab/film_og_medievidenskab_gymtv.pdf",
+    courseInfo: "http://kurser.ku.dk/course/hfmb00682u/2017-2018",
+    belongingStudy: "4"
+}, {
+    id: "65",
+    name: "Audiovisuel formidling: fiktion og fakta",
+    ects: 7.5,
+    externalCensor: false,
+    graded: true,
+    semesterType: [semesterType.fall],
+    link: "http://hum.ku.dk/uddannelser/aktuelle_studieordninger/film_medievidenskab/film_og_medievidenskab_gymtv.pdf",
+    courseInfo: "http://kurser.ku.dk/course/hfmb00693u/2017-2018",
+    belongingStudy: "4"
+}, {
+    id: "66",
+    name: "Audiovisuel formidling: web",
+    ects: 7.5,
+    externalCensor: false,
+    graded: true,
+    semesterType: [semesterType.fall],
+    link: "http://hum.ku.dk/uddannelser/aktuelle_studieordninger/film_medievidenskab/film_og_medievidenskab_gymtv.pdf",
+    courseInfo: "http://kurser.ku.dk/course/hfmb00701u/2017-2018",
+    belongingStudy: "4"
+}, {
+    id: "67",
+    name: "Audiovisuel formidling: fri produktion",
+    ects: 15,
+    externalCensor: true,
+    graded: true,
+    semesterType: [semesterType.fall],
+    link: "http://hum.ku.dk/uddannelser/aktuelle_studieordninger/film_medievidenskab/film_og_medievidenskab_gymtv.pdf",
+    courseInfo: "http://kurser.ku.dk/course/hfmb00711u/2017-2018",
+    belongingStudy: "4"
+}, {
+    id: "68",
+    name: "Film- og Mediesociologi",
+    ects: 15,
+    externalCensor: true,
+    graded: true,
+    semesterType: [semesterType.spring],
+    link: "http://hum.ku.dk/uddannelser/aktuelle_studieordninger/film_medievidenskab/film_og_medievidenskab_gymtv.pdf",
+    courseInfo: "http://kurser.ku.dk/course/hfmb10522u/2017-2018",
+    belongingStudy: "4"
+}, {
+    id: "69",
+    name: "Faktateori og -analyse",
+    ects: 15,
+    externalCensor: false,
+    graded: true,
+    semesterType: [semesterType.spring],
+    link: "http://hum.ku.dk/uddannelser/aktuelle_studieordninger/film_medievidenskab/film_og_medievidenskab_gymtv.pdf",
+    courseInfo: "http://kurser.ku.dk/course/hfmb00732u/2017-2018",
+    belongingStudy: "4"
 }
 ];
