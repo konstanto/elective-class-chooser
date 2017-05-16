@@ -58,6 +58,19 @@ export class Wizard extends React.Component<void, WizardState>{
         return selectedCourseObjects;
     }
 
+    private getUserSelectedCoursesAsObjects() {
+        const selectedCourseObjects: Course[] = [];
+        
+        const selectedStudy = _.find(studies, (study) => {return study.id === this.state.study});
+
+        _.map(this.state.selectedElectiveCourses, (selectedCourse) => {
+            if(selectedStudy.basicCourses.indexOf(selectedCourse) === -1){
+                selectedCourseObjects.push(_.find(courses, (course) => { return course.id === selectedCourse }));
+            }
+        });
+        return selectedCourseObjects;
+    }
+
     private selectCourse(course: string) {
         const selectedCourses = this.state.selectedElectiveCourses.slice();
         selectedCourses.push(course);
@@ -164,7 +177,7 @@ export class Wizard extends React.Component<void, WizardState>{
     public render() {
         return (
             <div className="wizard">
-                {this.state.shouldShowFurtherProcessDialog === false ? null : <FurtherProcessDialog onClose={() => {this.setState({shouldShowFurtherProcessDialog: false}) } } onStartOver={() => {this.startOver() } } />}
+                {this.state.shouldShowFurtherProcessDialog === false ? null : <FurtherProcessDialog onClose={() => {this.setState({shouldShowFurtherProcessDialog: false}) } } selectedCourses={this.getUserSelectedCoursesAsObjects()} />}
                 {this.state.study.length === 0 ? null : <ProgressIndicator stepIndex={this.getStepIndex()} goToChooseStudy={() => { this.startOver() } } goToChooseYear={() => { this.goToChooseYear() } } />}
                 <div className="body">
                     {this.getCurrentWizardStep()}

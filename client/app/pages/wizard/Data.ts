@@ -219,16 +219,6 @@ export const courses: Course[] = [{
     courseInfo: "http://kurser.ku.dk/course/hrtb00821u/2016-2017",
     belongingStudy: "2"
 }, {
-    id: "22",
-    name: "Retorik i samfundet: Temastudium",
-    ects: 15,
-    externalCensor: true,
-    graded: true,
-    semesterType: [semesterType.spring],
-    link: "http://hum.ku.dk/uddannelser/aktuelle_studieordninger/retorik/retorik_batv.pdf",
-    courseInfo: "http://kurser.ku.dk/course/hrtb00882u/2017-2018",
-    belongingStudy: "2"
-}, {
     id: "24",
     name: "Teoretisk filosofi: Bevidsthedsfilosofi og metafysik",
     ects: 15,

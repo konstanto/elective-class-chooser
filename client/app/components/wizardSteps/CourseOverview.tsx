@@ -18,6 +18,8 @@ interface CourseOverviewState {
 }
 
 export class CourseOverview extends React.Component<CourseOverviewProps, CourseOverviewState>{
+    private totalEctsAdded = 0;
+
     private constructor() {
         super();
         this.state = { selectedElectiveCourses: [] };
@@ -47,8 +49,8 @@ export class CourseOverview extends React.Component<CourseOverviewProps, CourseO
         this.setState({ selectedElectiveCourses: courseArray });
     }
 
-    private isCourseMandatoryInStudy(courseId: string){
-        const study = _.find(studies, (study)=>{return study.id === this.props.selectedStudyId});
+    private isCourseMandatoryInStudy(courseId: string) {
+        const study = _.find(studies, (study) => { return study.id === this.props.selectedStudyId });
 
         return study.basicCourses.indexOf(courseId) > -1;
     }
@@ -56,14 +58,16 @@ export class CourseOverview extends React.Component<CourseOverviewProps, CourseO
     private getCourseBlocks(course: Course) {
         let courseClassName = course.ects === 15 ? "half" : "quart";
 
-        courseClassName =+ this.isCourseMandatoryInStudy(course.id) ? courseClassName : courseClassName + " can-be-removed";
+        courseClassName = + this.isCourseMandatoryInStudy(course.id) ? courseClassName : courseClassName + " can-be-removed";
 
-        return (<div key={course.id} onClick={() => { this.removeCourse(course.id) } } className={"course " + courseClassName}><p className="name">{course.name}</p></div>);
+        return (
+            <div key={course.id} onClick={() => { this.removeCourse(course.id) } } className={"course " + courseClassName}><p className="name">{course.name}</p></div>
+        );
     }
 
     public render() {
         return (
-            <div className={this.props.shouldBeDisabled === true ? "course-overview disabled" : "course-overview" }>
+            <div className={this.props.shouldBeDisabled === true ? "course-overview disabled" : "course-overview"}>
                 <h2 className="headline">Semesterplan</h2>
                 <div className="overview">
                     <div className="year-description">
@@ -75,12 +79,35 @@ export class CourseOverview extends React.Component<CourseOverviewProps, CourseO
                         <div className="semester-headline">
                             <p>Efterår</p>
                         </div>
+                        <div className="semester-description">
+                            <div className="semester-row">
+                                <p className="semester-header">1. semester</p>
+                            </div>
+                            <div className="semester-row">
+                                <p className="semester-header">3. semester</p>
+                            </div>
+                            <div className="semester-row">
+                                <p className="semester-header">5. semester</p>
+                            </div>
+                        </div>
+
                         {_.map(this.state.selectedElectiveCourses.filter((electiveCourse: Course) => { return _.includes(electiveCourse.semesterType, semesterType.fall) }), (course) => { return this.getCourseBlocks(course); })}
                     </div>
                     <div className="semester spring">
                         <div className="semester-headline">
                             <p>Forår</p>
                         </div>
+                        <div className="semester-description">
+                        <div className="semester-row">
+                            <p className="semester-header">2. semester</p>
+                        </div>
+                        <div className="semester-row">
+                            <p className="semester-header">4. semester</p>
+                        </div>
+                        <div className="semester-row">
+                            <p className="semester-header">6. semester</p>
+                        </div>
+                    </div>
                         {_.map(this.state.selectedElectiveCourses.filter((electiveCourse: Course) => { return _.includes(electiveCourse.semesterType, semesterType.spring) }), (course) => { return this.getCourseBlocks(course); })}
                     </div>
                 </div>

@@ -146,7 +146,7 @@ export class SelectCourse extends React.Component<SelectCourseProps, SelectCours
 
         return (
             <div className="select-course">
-                <h2 className="headline">Vælg kursus</h2>
+                <h2 className="headline">Vælg valgfag</h2>
                 <div className="semester-type-selector">
                     <div className={"tab " + isSummerSelected} onClick={() => { this.setState({ selectedSemesterType: semesterType.fall }) } }>
                         <p>5. semester</p>
