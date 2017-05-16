@@ -176,6 +176,7 @@ export const courses: Course[] = [{
     externalCensor: false,
     graded: false,
     semesterType: [semesterType.fall],
+    courseInfo: "http://kurser.ku.dk/course/hfmk03414u/2017-2018",
     belongingStudy: "4"
 }, {
     id: "14",
@@ -184,6 +185,7 @@ export const courses: Course[] = [{
     externalCensor: false,
     graded: false,
     semesterType: [semesterType.spring],
+    courseInfo: "http://kurser.ku.dk/course/hfmk03414u/2017-2018",
     belongingStudy: "4"
 },
 {
@@ -237,15 +239,6 @@ export const courses: Course[] = [{
     courseInfo: "http://kurser.ku.dk/course/hfib00462u/2016-2017",
     belongingStudy: "3"
 }, {
-    id: "25",
-    name: "Værklæsning (AFLYST)",
-    ects: 15,
-    externalCensor: true,
-    graded: true,
-    semesterType: [semesterType.fall],
-    link: "http://hum.ku.dk/uddannelser/aktuelle_studieordninger/filosofi/filosofi_gymtv.pdf",
-    belongingStudy: "3"
-}, {
     id: "26",
     name: "Filosofisk Æstetik",
     ects: 15,
@@ -283,6 +276,7 @@ export const courses: Course[] = [{
     graded: true,
     semesterType: [semesterType.fall],
     link: "http://hum.ku.dk/uddannelser/aktuelle_studieordninger/film_medievidenskab/film_og_medievidenskab_gymtv.pdf",
+    courseInfo: "http://kurser.ku.dk/course/hfmb10501u/2017-2018",
     belongingStudy: "4"
 }, {
     id: "31",
@@ -302,15 +296,7 @@ export const courses: Course[] = [{
     graded: false,
     semesterType: [semesterType.fall],
     link: "http://hum.ku.dk/uddannelser/aktuelle_studieordninger/paedagogik/paedagogik_batv_2015.pdf",
-    belongingStudy: "5"
-}, {
-    id: "33",
-    name: "MANGLER Professioner, vidensformer og anvendelse",
-    ects: 15,
-    externalCensor: false,
-    graded: false,
-    semesterType: [semesterType.fall],
-    link: "http://hum.ku.dk/uddannelser/aktuelle_studieordninger/paedagogik/paedagogik_batv_2015.pdf",
+    courseInfo: "http://hum.ku.dk/uddannelser/aktuelle_studieordninger/paedagogik/paedagogik_batv_2015.pdf",
     belongingStudy: "5"
 }, {
     id: "36",
@@ -322,15 +308,15 @@ export const courses: Course[] = [{
     link: "http://hum.ku.dk/uddannelser/aktuelle_studieordninger/paedagogik/paedagogik_batv_2015.pdf",
     courseInfo: "http://kurser.ku.dk/course/hpÆb10161u/2016-2017",
     belongingStudy: "5"
-
 }, {
     id: "39",
-    name: "MANGLER Fordybelse i særligt studeret emne",
+    name: "Fordybelse i særligt studeret emne",
     ects: 15,
     externalCensor: true,
     graded: true,
     semesterType: [semesterType.fall],
     link: "http://hum.ku.dk/uddannelser/aktuelle_studieordninger/paedagogik/paedagogik_batv_2015.pdf",
+    courseInfo: "http://hum.ku.dk/uddannelser/aktuelle_studieordninger/paedagogik/paedagogik_batv_2015.pdf",
     belongingStudy: "5"
 }, {
     id: "42",
