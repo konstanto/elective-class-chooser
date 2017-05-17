@@ -9,7 +9,7 @@ export class Header extends React.Component<void, void>{
             <div className="header">
                 <div className="header-content">
                     <div className="logo">
-                        <a href="/"><div className="logo-image"></div></a>
+                        <a href="http://madebyfm.dk/f2017e/a/8/"><div className="logo-image"></div></a>
                     </div>
                     <div className="menu">
                         <Link to="/info/regler">Regler</Link>
